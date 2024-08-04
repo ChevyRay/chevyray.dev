@@ -31,6 +31,7 @@
     src: url(fonts/fira/fira-code-v17-latin-700.woff2) format('woff2');
   }
   
+  /*
   // FIRA SANS
   
   @font-face {
@@ -143,7 +144,7 @@
     font-style: italic;
     font-weight: 900;
     src: url(fonts/fira/fira-sans-v15-latin-900italic.woff2) format('woff2');
-  }
+  }*/
   
   // YUSEI MAGIC
   
@@ -177,16 +178,79 @@
 
   // PROZA LIBRE
 
-  @font-face {
-    font-family: 'header';
-    font-style: normal;
-    font-weight: 400;
-    src: url(fonts/proza/ProzaLibre-Regular.ttf) format('truetype');
-  }
+@font-face {
+  font-family: 'regular';
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/proza/ProzaLibre-Regular.ttf) format('truetype');
+}
 
-  @font-face {
-    font-family: 'header';
-    font-style: normal;
-    font-weight: 700;
-    src: url(fonts/proza/ProzaLibre-Bold.ttf) format('truetype');
-  }
+@font-face {
+  font-family: 'regular';
+  font-style: italic;
+  font-weight: 400;
+  src: url(fonts/proza/ProzaLibre-Italic.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'regular';
+  font-style: normal;
+  font-weight: 500;
+  src: url(fonts/proza/ProzaLibre-Medium.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'regular';
+  font-style: italic;
+  font-weight: 500;
+  src: url(fonts/proza/ProzaLibre-MediumItalic.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'regular';
+  font-style: normal;
+  font-weight: 600;
+  src: url(fonts/proza/ProzaLibre-SemiBold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'regular';
+  font-style: italic;
+  font-weight: 600;
+  src: url(fonts/proza/ProzaLibre-SemiBoldItalic.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'regular';
+  font-style: normal;
+  font-weight: 700;
+  src: url(fonts/proza/ProzaLibre-Bold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'regular';
+  font-style: italic;
+  font-weight: 700;
+  src: url(fonts/proza/ProzaLibre-BoldItalic.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'regular';
+  font-style: normal;
+  font-weight: 800;
+  src: url(fonts/proza/ProzaLibre-ExtraBold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'regular';
+  font-style: italic;
+  font-weight: 800;
+  src: url(fonts/proza/ProzaLibre-ExtraBoldItalic.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'title';
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/yusei_magic/YuseiMagic-Regular.ttf) format('truetype');
+}

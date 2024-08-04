@@ -1,27 +1,36 @@
 body {
     background-color: $base;
     color: $text;
-    font-family: 'regular';
+    font-family: 'regular', sans-serif;
     font-size: 18px;
     width: 100%;
 }
 
+.column {
+    max-width: 64ch;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
 h1 {
-    font-family: 'header';
+    font-family: 'title', sans-serif;
     font-weight: bold;
     color: $text;
 }
 
 h2 {
-    font-family: 'header';
+    font-family: 'title', sans-serif;
     font-weight: bold;
-    color: $subtext0;
+    color: $subtext1;
+    margin-block: 2em 1em;
 }
 
 h3 {
-    font-family: 'header';
+    font-family: 'title', sans-serif;
     font-weight: bold;
-    color: $subtext1;
+    color: $subtext0;
+    //margin-block: 2em 1em;
 }
 
 a {
@@ -29,6 +38,17 @@ a {
     &:hover {
         color: $text;
     }
+}
+
+hr {
+    border-top: 4px;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+    border-style: dotted;
+    border-color: $surface2;
+    margin-top: 2em;
+    margin-bottom: 2em;
 }
 
 .header {
@@ -43,13 +63,9 @@ a {
     mask: var(--mask);
 
     > div {
-        max-width: 80ch;
-        margin: 0 auto;
         color: $base;
-        font-family: 'header';
+        //font-family: 'header';
         display: flex;
-        padding-left: 20px;
-        padding-right: 20px;
     }
 
     .title {
@@ -73,18 +89,34 @@ a {
     .links {
         flex: 1;
         color: $base;
+        text-align: right;
+
+        i {
+            margin-left: 2px;
+        }
+
+        a {
+            color: $base;
+            text-decoration: none;
+            font-weight: bold;
+
+            &:hover {
+                color: $blue;
+            }
+        }
     }
 }
 
 .page {
     //background-color: $base;
-    padding: 25px;
+    //padding: 25px;
 }
 
 .content {
-    max-width: 80ch;
-    font-weight: normal;
-    margin: 0 auto;
+    > h1 {
+        margin-block-end: 1em;
+        border-bottom: 4px dotted $text;
+    }
     p {
         margin-block: 1em 1em;
 
@@ -101,22 +133,24 @@ a {
 }
 
 .footer {
+    margin-top: 2em;
     border-top: 10px dotted $pink;
-    
-    font-size: 1.1em;
-    //font-weight: 500;
     color: $subtext1;
-    font-style: italic;
     text-align: center;
 
+    p {
+        font-style: italic;
+        //font-size: 1.1em;
+        //font-weight: 500;
+    }
+
     > div {
-        max-width: 80ch;
-        margin: 0 auto;
         margin-top: 2em;
         margin-bottom: 2em;
     }
 
-    a:has(i) {
+    //a:has(i) {
+    a {
         text-decoration: none;
     }
 
@@ -162,6 +196,7 @@ h4 {
 .about {
     display: flex;
     margin-bottom: 1em;
+    margin-top: 0.5em;
     align-items: center;
 
     div:first-child {
@@ -170,9 +205,9 @@ h4 {
 
     .blurb {
         flex: 1;
-        font-family: 'header';
-        //font-size: 0.95em;
+        font-family: 'title', sans-serif;
         font-size: 1.2em;
+        color: $subtext1;
         line-height: 1.3em;
     }
 
@@ -210,50 +245,74 @@ h4 {
 }
 
 blockquote {
-    background-color: $crust;
+    background-color: $mantle;
     padding: 1px 20px 1px 20px;
     border-radius: 10px;
     margin-block: 1em 1em;
     font-style: italic;
 
+    code {
+        //background-color: $surface0 !important;
+        background-color: transparent !important;
+        border: 1px dotted $text;
+    }
+
     h1, h2 {
         font-family: 'regular';
+        font-style: normal;
         font-size: 1em;
+        font-weight: 700;
+        opacity: 75%;
         line-height: 1em;
         margin-block: 1em 1em;
-        font-weight: 500;
 
         &:first-child {
             font-size: 1.1em;
         }
     }
 
-    h1:last-child {
+    p:has(cite) {
         text-align: right;
+        font-weight: 500;
         color: $subtext0;
+
+        cite::before {
+            content: "— ";
+        }
     }
+
+    /*h1:last-child {
+        font-style: italic;
+        text-align: right;
+        font-weight: 500;
+        color: $subtext0;
+    }*/
 
     &:has(h1:first-child) {
         background-color: transparent;
         color: $red;
-        h1 {
+        a, h1 {
             color: $red;
         }
+        a:hover {
+            color: $text;
+        }
         code {
-            background-color: transparent;
-            border: 1px dotted $red;
+            border-color: $red;
         }
     }
 
     &:has(h2:first-child) {
         background-color: transparent;
         color: $blue;
-        h2 {
+        a, h2 {
             color: $blue;
         }
+        a:hover {
+            color: $text;
+        }
         code {
-            background-color: transparent;
-            border: 1px dotted $blue;
+            border-color: $blue;
         }
     }
 }

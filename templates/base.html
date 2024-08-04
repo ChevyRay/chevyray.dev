@@ -57,38 +57,56 @@
 </head>
 <body>
     <div class="header">
-        <div>
+        <div class="column">
             <div class="title">
-                <h1>Chevy Ray ❤</h1>
+                <h1>CHEVY RAY</h1>
                 <h2>Rust &amp; Game Development</h2>
             </div>
             <div class="links">
-                <div>Link 1</div>
-                <div>Link 1</div>
-                <div>Link 1</div>
+                <div class="link">
+                    <a href="">Posts <i class="ri-file-paper-2-line"></i></a>
+                </div>
+                <div class="link">
+                    <a href="">Archive <i class="ri-archive-line"></i></a>
+                </div>
+                <div class="link">
+                    <a href="">Tags <i class="ri-bookmark-line"></i></a>
+                </div>
             </div>
         </div>
     </div>
     <div class="page">
-        <div class="content">
+        <div class="column content">
             {% block content %}
             {% endblock content %}
         </div>
     </div>
     <div class="footer">
-        <div>
+        <div class="column">
             <p>Copyright 2024 &copy; Chevy Ray Johnston</p>
             <p>
                 <i class="ri-github-fill"></i> <a href="https://github.com/chevyray" target="_blank">github</a>
                 <i class="ri-twitter-fill"></i> <a href="https://x.com/chevyray" target="_blank">twitter</a>
                 <i class="ri-mail-fill"></i> <a href="mailto:happytrash@gmail.com" target="_blank">email</a>
             </p>
-            <p>Powered by <a href="https://www.getzola.org/" target="_blank">Zola</a> (written in Rust!)</p>
-            <p>Colors from <a href="https://catppuccin.com/" target="_blank">Catppuccin</a></p>
+            <br>
+            <p>Powered by <a href="https://www.getzola.org/" target="_blank">Zola</a></p>
+            <p>Color theme by <a href="https://catppuccin.com/" target="_blank">Catppuccin</a></p>
+            <p>
+                <a style="font-family:'title';font-style:normal;" href="https://github.com/tanukifont/YuseiMagic" target="_blank">Yusei Magic</a>
+                •
+                <a style="font-style:normal;" href="https://github.com/jasperdewaard/Proza-Libre" target="_blank">Proza Libre</a>
+                •
+                <a style="font-family:'code';font-style:normal;" href="https://github.com/tonsky/FiraCode" target="_blank">Fira Code</a>
+            </p>
+            <p>
+                Icons by <a href="https://remixicon.com/" target="_blank">Remix Icon</a>
+            </p>
+            <br>
             <p class="theme">
-                <i class="ri-sun-fill"></i>
-                <i class="ri-moon-fill"></i>
-                <i class="ri-contrast-2-fill"></i>
+                <i style="opacity:75%;" class="ri-sun-fill"></i>
+                <a href="#"><i class="ri-moon-fill"></i></a>
+                <a href="#"><i class="ri-contrast-2-fill"></i></a>
             </p>
         </div>
     </div>

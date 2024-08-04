@@ -29,28 +29,49 @@ fn main() {
 
 Bilbo was very rich and very peculiar, and had been the wonder of the Shire for sixty years, ever since his remarkable disappearance and unexpected return. The riches he had brought back from his travels had now become a local legend, and it was popularly believed, whatever the old folk might say, that the Hill at Bag End was full of tunnels stuffed with treasure. And if that was not enough for fame, there was also his prolonged vigour to marvel at. Time wore on, but it seemed to have little effect on Mr. Baggins.
 
-> # <i class="ri-error-warning-line"></i> WARNING!
-> 
-> Here is something you should be warned about! There's even a big red bubble here so you know it's serious!
-> Make sure you don't `Result<T, E>` it, or the consequences could be dire...
-
-At ninety he was much the same as at fifty. At ninety-nine they began to call him well-preserved; but unchanged would have been nearer the mark. There were some that shook their heads and thought this was too much of a good thing; it seemed unfair that anyone should possess (apparently) perpetual youth as well as (reputedly) inexhaustible wealth.
-
-> ## <i class="ri-lightbulb-line"></i> DID YOU KNOW?
-> 
-> Here is something you should be warned about! There's even a big `Vec<usize>` here so you know it's serious!
-> Make sure you don't ignore it, or the consequences could be dire...
-
-At ninety he was much the same as at fifty. At ninety-nine they began to call him well-preserved; but unchanged would have been nearer the mark. There were some that shook their heads and thought this was too much of a good thing; it seemed unfair that anyone should possess (apparently) perpetual youth as well as (reputedly) inexhaustible wealth.
-
-> It will have to be paid for. It isn’t natural, and trouble will come of it!
-> It will have to be paid for. It isn’t natural, and trouble will come of it!
-> It will have to be paid for. It isn’t natural, and trouble will come of it!
-> It will have to be paid for. It isn’t natural, and trouble will come of it!
-> 
-> # &mdash; Maddy Thorson, creator of Celeste
+## About Bilbo Baggins
 
 Bilbo was very rich and very peculiar, and had been the wonder of the Shire for sixty years, ever since his remarkable disappearance and unexpected return. The riches he had brought back from his travels had now become a local legend, and it was popularly believed, whatever the old folk might say, that the Hill at Bag End was full of tunnels stuffed with treasure. And if that was not enough for fame, there was also his prolonged vigour to marvel at. Time wore on, but it seemed to have little effect on Mr. Baggins.
+
+![image](https://img.itch.zone/aW1hZ2UvNTU2NDU0LzI5MTYzNzgucG5n/original/6GRlJM.png)
+
+
+### One More Thing
+
+Bilbo was very rich and very peculiar, and had been the wonder of the Shire for sixty years, ever since his remarkable disappearance and unexpected return. The riches he had brought back from his travels had now become a local legend, and it was popularly believed, whatever the old folk might say, that the Hill at Bag End was full of tunnels stuffed with treasure. And if that was not enough for fame, there was also his prolonged vigour to marvel at. Time wore on, but it seemed to have little effect on Mr. Baggins.
+
+> # <i class="ri-error-warning-line"></i> Warning!
+> 
+> Here is something you should be warned about! There's even a big red bubble here so you know it's serious!
+> Make sure you don't `Result<T, E>` it, or the [consequences](https://doc.rust-lang.org/std/result/enum.Result.html)
+> could be dire...
+>
+> There is some more text here!
+
+At ninety he was much the same as at fifty. At ninety-nine they began to call him well-preserved; but unchanged would have been nearer the mark. There were some that shook their heads and thought this was too much of a good thing; it seemed unfair that anyone should possess (apparently) perpetual youth as well as (reputedly) inexhaustible wealth.
+
+> ## <i class="ri-lightbulb-line"></i> Did you know?
+> 
+> This isn't a warning, but it's something I want to call out! There's even a big `Vec<usize>` here, and I
+> didn't want you to miss out on it! I can even [link you](https://doc.rust-lang.org/std/vec/struct.Vec.html)
+> to its documentation.
+
+At ninety he was much the same as at fifty. At ninety-nine they began to call him well-preserved; but unchanged would have been nearer the mark. There were some that shook their heads and thought this was too much of a good thing; it seemed unfair that anyone should possess (apparently) perpetual youth as well as (reputedly) inexhaustible wealth.
+
+> **Anonymous123 asks:**
+>
+> It will have to be [paid for](https://www.rust-lang.org/). It isn’t natural, and trouble will come of it!
+> It will have to be paid for. It isn’t natural, and `Trouble<T>` will come of it!
+> It will have to be paid for. It isn’t natural, and trouble will come of it!
+> It will have to be paid for. It isn’t natural, and trouble will come of it!
+> 
+> <cite>Chevy Ray, creator of Ikenfell</cite>
+
+Bilbo was *very rich* and very peculiar, and had been the wonder of the *Shire* for sixty years, ever since his remarkable disappearance and unexpected return. The riches he had brought back from his travels had now become a local legend, and it was popularly believed, whatever the old folk might say, that the Hill at Bag End was full of tunnels stuffed with treasure. And if that was not enough for fame, there was also his prolonged vigour to marvel at. Time wore on, but it seemed to have little effect on Mr. Baggins.
+
+---
+
+Bilbo was *very rich* and very peculiar, and had been the wonder of the *Shire* for sixty years, ever since his remarkable disappearance and unexpected return. The riches he had brought back from his travels had now become a local legend, and it was popularly believed, whatever the old folk might say, that the Hill at Bag End was full of tunnels stuffed with treasure. And if that was not enough for fame, there was also his prolonged vigour to marvel at. Time wore on, but it seemed to have little effect on Mr. Baggins.
 
 ## Chapter 2: Trouble Brewing
 

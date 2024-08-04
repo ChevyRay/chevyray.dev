@@ -147,7 +147,7 @@
   
   // YUSEI MAGIC
   
-  @font-face {
+  /*@font-face {
     font-family: 'header';
     font-style: normal;
     font-weight: 400;
@@ -173,4 +173,20 @@
     font-style: normal;
     font-weight: 700;
     src: url(fonts/tanugo/Tanugo-Bold.otf) format('opentype');
+  }*/
+
+  // PROZA LIBRE
+
+  @font-face {
+    font-family: 'header';
+    font-style: normal;
+    font-weight: 400;
+    src: url(fonts/proza/ProzaLibre-Regular.ttf) format('truetype');
+  }
+
+  @font-face {
+    font-family: 'header';
+    font-style: normal;
+    font-weight: 700;
+    src: url(fonts/proza/ProzaLibre-Bold.ttf) format('truetype');
   }

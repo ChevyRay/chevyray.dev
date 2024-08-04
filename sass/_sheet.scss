@@ -9,6 +9,7 @@ body {
 h1 {
     font-family: 'header';
     font-weight: bold;
+    color: $text;
 }
 
 h2 {
@@ -89,11 +90,12 @@ a {
 
         code {
             background-color: $crust;
+            font-style: normal;
             font-size: 0.9em;
             padding-left: 5px;
             padding-right: 5px;
             border-radius: 4px;
-            //border: 1px dotted $text;
+            //border: 1px dotted $overlay1;
         }
     }
 }
@@ -114,9 +116,16 @@ a {
         margin-bottom: 2em;
     }
 
+    a:has(i) {
+        text-decoration: none;
+    }
+
     i {
-        font-size: 1.2em;
         margin-left: 5px;
+    }
+
+    .theme i {
+        font-size: 1.5em;
     }
 }
 
@@ -164,6 +173,7 @@ h4 {
         font-family: 'header';
         //font-size: 0.95em;
         font-size: 1.2em;
+        line-height: 1.3em;
     }
 
     .portrait {
@@ -181,12 +191,16 @@ h4 {
     margin-top: 1em;
     margin-bottom: 2em;
 
+    a {
+        opacity: 0.75;
+    }
+
     a:not(:first-child) {
         margin-left: 10px;
     }
 
     a:hover {
-        opacity: 0.75;
+        opacity: 1.0;
         transition: opacity 0.25s, background 0.25s;
     }
 
@@ -200,16 +214,46 @@ blockquote {
     padding: 1px 20px 1px 20px;
     border-radius: 10px;
     margin-block: 1em 1em;
-
-    //font-size: 1.05em;
     font-style: italic;
 
-    > h1 {
+    h1, h2 {
         font-family: 'regular';
         font-size: 1em;
-        font-weight: normal;
-        text-align: right;
-
+        line-height: 1em;
         margin-block: 1em 1em;
+        font-weight: 500;
+
+        &:first-child {
+            font-size: 1.1em;
+        }
+    }
+
+    h1:last-child {
+        text-align: right;
+        color: $subtext0;
+    }
+
+    &:has(h1:first-child) {
+        background-color: transparent;
+        color: $red;
+        h1 {
+            color: $red;
+        }
+        code {
+            background-color: transparent;
+            border: 1px dotted $red;
+        }
+    }
+
+    &:has(h2:first-child) {
+        background-color: transparent;
+        color: $blue;
+        h2 {
+            color: $blue;
+        }
+        code {
+            background-color: transparent;
+            border: 1px dotted $blue;
+        }
     }
 }

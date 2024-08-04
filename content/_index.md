@@ -27,14 +27,30 @@ fn main() {
 }
 ```
 
-Bilbo was very rich and very peculiar, and had been the wonder of the Shire for sixty years, ever since his remarkable disappearance and unexpected return. The riches he had brought back from his travels had now become a local legend, and it was popularly believed, whatever the old folk might say, that the Hill at Bag End was full of tunnels stuffed with treasure. And if that was not enough for fame, there was also his prolonged vigour to marvel at. Time wore on, but it seemed to have little effect on Mr. Baggins. At ninety he was much the same as at fifty. At ninety-nine they began to call him well-preserved; but unchanged would have been nearer the mark. There were some that shook their heads and thought this was too much of a good thing; it seemed unfair that anyone should possess (apparently) perpetual youth as well as (reputedly) inexhaustible wealth.
+Bilbo was very rich and very peculiar, and had been the wonder of the Shire for sixty years, ever since his remarkable disappearance and unexpected return. The riches he had brought back from his travels had now become a local legend, and it was popularly believed, whatever the old folk might say, that the Hill at Bag End was full of tunnels stuffed with treasure. And if that was not enough for fame, there was also his prolonged vigour to marvel at. Time wore on, but it seemed to have little effect on Mr. Baggins.
+
+> # <i class="ri-error-warning-line"></i> WARNING!
+> 
+> Here is something you should be warned about! There's even a big red bubble here so you know it's serious!
+> Make sure you don't `Result<T, E>` it, or the consequences could be dire...
+
+At ninety he was much the same as at fifty. At ninety-nine they began to call him well-preserved; but unchanged would have been nearer the mark. There were some that shook their heads and thought this was too much of a good thing; it seemed unfair that anyone should possess (apparently) perpetual youth as well as (reputedly) inexhaustible wealth.
+
+> ## <i class="ri-lightbulb-line"></i> DID YOU KNOW?
+> 
+> Here is something you should be warned about! There's even a big `Vec<usize>` here so you know it's serious!
+> Make sure you don't ignore it, or the consequences could be dire...
+
+At ninety he was much the same as at fifty. At ninety-nine they began to call him well-preserved; but unchanged would have been nearer the mark. There were some that shook their heads and thought this was too much of a good thing; it seemed unfair that anyone should possess (apparently) perpetual youth as well as (reputedly) inexhaustible wealth.
 
 > It will have to be paid for. It isn’t natural, and trouble will come of it!
 > It will have to be paid for. It isn’t natural, and trouble will come of it!
 > It will have to be paid for. It isn’t natural, and trouble will come of it!
 > It will have to be paid for. It isn’t natural, and trouble will come of it!
 > 
-> # &mdash; Bilbo Baggins
+> # &mdash; Maddy Thorson, creator of Celeste
+
+Bilbo was very rich and very peculiar, and had been the wonder of the Shire for sixty years, ever since his remarkable disappearance and unexpected return. The riches he had brought back from his travels had now become a local legend, and it was popularly believed, whatever the old folk might say, that the Hill at Bag End was full of tunnels stuffed with treasure. And if that was not enough for fame, there was also his prolonged vigour to marvel at. Time wore on, but it seemed to have little effect on Mr. Baggins.
 
 ## Chapter 2: Trouble Brewing
 

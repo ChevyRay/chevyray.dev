@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- meta name="viewport" content="width=device-width, initial-scale=1" -->
+    <!-- meta name="viewport" content="width=device-width, minimum-scale=1" -->
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+
+    {% if section %}
+        {% if section.title == "Home" %}
+            {% set title = config.title %}
+            {% set desc = config.description %}
+        {% else %}
+            {% set title = config.title ~ " | " ~ section.title %}
+            {% set desc = section.description %}
+        {% endif %}
+        {% set url = section.permalink %}
+    {% elif page %}
+        {% set title = config.title ~ " | " ~ page.title %}
+        {% set desc = page.description %}
+        {% set url = page.permalink %}
+    {% else %}
+        {% set title = config.title %}
+        {% set desc = config.description %}
+        {% set url = config.base_url %}
+    {% endif %}
+
+    <title>{{ title }}</title>
+    <meta name="description" content="{{ desc }}">
+
+    <meta property="og:title" content="{{ title }}">
+    <meta property="og:description" content="{{ desc }}">
+    <meta property="og:url" content="{{ url | safe }}">
+    <meta property="og:image" content="/img/portrait.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@ChevyRay" />
+    <meta name="twitter:title" content="{{ title }}" />
+    <meta name="twitter:description" content="{{ desc }}" />
+    <meta name="twitter:image:src" content="{{ config.base_url | safe }}img/portrait.png" />
+
+    <meta name="keywords" content="Rust, Programming, Game Development, Worldbuilding, Art">
+    <meta name="author" content="Chevy Ray Johnston">
+    <meta name="viewport" content="width=device-width" >
+    
+    <!-- favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="theme-color" content="#ffffff"> 
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="/light.css" id="sheet-link">
+</head>
+<body>
+    <div class="header">
+        <h1>❤ CHEVY RAY ❤</h1>
+        <h2>Rust &amp; Game Development</h2>
+    </div>
+    <div class="page">
+        <div class="content">
+            {% block content %}
+            {% endblock content %}
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,106 @@
+body {
+    background-color: $base;
+    color: $text;
+    font-family: 'regular', sans-serif;
+    width: 100%;
+}
+
+h1 {
+    font-family: 'header';
+    font-weight: bold;
+}
+
+h2 {
+    font-family: 'header';
+    font-weight: bold;
+    color: $subtext0;
+}
+
+h3 {
+    font-family: 'header';
+    font-weight: bold;
+    color: $subtext1;
+}
+
+a {
+    color: $blue;
+    &:hover {
+        color: $text;
+    }
+}
+
+.header {
+    text-align: center;
+    background-color: $pink;
+    //background-color: #ea76cb;
+    padding-top: 25px;
+    padding-bottom: 40px;
+
+    --a: 90deg; /* the angle of the spikes*/
+    --s: 40px;  /* the size of spikes*/
+    --mask: conic-gradient(from calc(var(--a)/-2) at bottom, #0000,#000 1deg var(--a),#0000 calc(var(--a) + 1deg)) 50%/var(--s);
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+
+    h1 {
+        font-weight: bold;
+        color: $base;
+        font-size: 2.5em;
+        line-height: 1em;
+        margin-block: 0 0;
+    }
+    h2 {
+        font-weight: bold;
+        color: $base;
+        margin-block: 0 0;
+    }
+}
+
+.page {
+    //background-color: $base;
+    padding: 25px;
+}
+
+.content {
+    max-width: 80ch;
+    font-weight: normal;
+    font-size: 18px;
+    margin: 0 auto;
+    p {
+        margin-block: 1em 1em;
+    }
+}
+
+.footer {
+
+}
+
+pre:has(code) {
+    //background-color: $base !important;
+    font-size: 16px;
+    border: 2px solid $surface0;
+    border-radius: 5px;
+    padding: 10px;
+
+    overflow-x: auto;
+}
+
+h4 + pre {
+    border-top-left-radius: 0;
+    margin-top: -3px;
+}
+
+h4 {
+    font-family: 'code' !important;
+    font-size: 0.8em;
+    font-weight: 600;
+
+    background-color: $surface0;
+    padding: 0 20px 0 20px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+    margin: 0;
+    margin-block: 0 0;
+    display: inline-block;
+}

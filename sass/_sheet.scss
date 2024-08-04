@@ -1,7 +1,8 @@
 body {
     background-color: $base;
     color: $text;
-    font-family: 'regular', sans-serif;
+    font-family: 'regular';
+    font-size: 18px;
     width: 100%;
 }
 
@@ -30,9 +31,7 @@ a {
 }
 
 .header {
-    text-align: center;
     background-color: $pink;
-    //background-color: #ea76cb;
     padding-top: 25px;
     padding-bottom: 40px;
 
@@ -42,17 +41,35 @@ a {
     -webkit-mask: var(--mask);
     mask: var(--mask);
 
-    h1 {
-        font-weight: bold;
+    > div {
+        width: 80ch;
+        margin: 0 auto;
         color: $base;
-        font-size: 2.5em;
-        line-height: 1em;
-        margin-block: 0 0;
+        font-family: 'header';
+        display: flex;
     }
-    h2 {
-        font-weight: bold;
+
+    .title {
+        //margin-right: 20px;
+
+        h1 {
+            color: $base;
+            font-weight: bold;
+            font-size: 2.5em;
+            line-height: 1em;
+            margin-block: 0 0;
+        }
+    
+        h2 {
+            color: $base;
+            font-weight: bold;
+            margin-block: 0 0;
+        }
+    }
+
+    .links {
+        flex: 1;
         color: $base;
-        margin-block: 0 0;
     }
 }
 
@@ -64,15 +81,41 @@ a {
 .content {
     max-width: 80ch;
     font-weight: normal;
-    font-size: 18px;
     margin: 0 auto;
     p {
         margin-block: 1em 1em;
+
+        code {
+            background-color: $crust;
+            font-size: 0.9em;
+            padding-left: 5px;
+            padding-right: 5px;
+            border-radius: 4px;
+            //border: 1px dotted $text;
+        }
     }
 }
 
 .footer {
+    border-top: 10px dotted $pink;
+    
+    font-size: 1.1em;
+    //font-weight: 500;
+    color: $subtext1;
+    font-style: italic;
+    text-align: center;
 
+    > div {
+        width: 80ch;
+        margin: 0 auto;
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+
+    i {
+        font-size: 1.2em;
+        margin-left: 5px;
+    }
 }
 
 pre:has(code) {
@@ -103,4 +146,69 @@ h4 {
     margin: 0;
     margin-block: 0 0;
     display: inline-block;
+}
+
+.about {
+    display: flex;
+    margin-bottom: 1em;
+    display: flex;
+    align-items: center;
+
+    div:first-child {
+        margin-right: 10px;
+    }
+
+    .blurb {
+        flex: 1;
+        font-family: 'header';
+        //font-size: 0.95em;
+        font-size: 1.2em;
+    }
+
+    .portrait {
+        width: 200px;
+        height: 200px;
+        background-image: url("img/portrait.png");
+        background-size: contain;
+        border-radius: 50%;
+    }
+}
+
+.projects {
+    display: flex;
+    height: 200px;
+    margin-top: 1em;
+    margin-bottom: 2em;
+
+    a:not(:first-child) {
+        margin-left: 10px;
+    }
+
+    a:hover {
+        opacity: 0.75;
+        transition: opacity 0.25s, background 0.25s;
+    }
+
+    img {
+        border-radius: 20px;
+    }
+}
+
+blockquote {
+    background-color: $crust;
+    padding: 1px 20px 1px 20px;
+    border-radius: 10px;
+    margin-block: 1em 1em;
+
+    //font-size: 1.05em;
+    font-style: italic;
+
+    > h1 {
+        font-family: 'regular';
+        font-size: 1em;
+        font-weight: normal;
+        text-align: right;
+
+        margin-block: 1em 1em;
+    }
 }

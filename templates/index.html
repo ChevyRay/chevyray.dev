@@ -2,6 +2,36 @@
 
 {% block content %}
 
+<div class="about">
+    <div class="blurb">
+        <div>
+            <p>
+                Welcome! I'm a long-time indie game developer, worldbuilder, and prolific
+                pixel font designer. Here I post mostly about game development and Rust,
+                with the intent to help others learn.
+            </p>
+            <p>
+                Some cool things I've made:
+            </p>
+            <!-- p>
+                Here he posts about Rust and game dev, with a sprinkling of whatever else is currently fascinating him.
+            </p -->
+        </div>
+    </div>
+    <div class="portrait"></div>
+</div>
+<div class="projects">
+    <a href="https://www.humblegames.com/games/ikenfell/" target="_blank">
+        <img src="img/ikenfell_thumb.png">
+    </a>
+    <a href="https://chevyray.itch.io/" target="_blank">
+        <img src="img/fonts_thumb.png">
+    </a>
+    <a href="https://chevyray.itch.io/noise1" target="_blank">
+        <img src="img/noise1_thumb.png">
+    </a>
+</div>
+
 {{ section.content | safe }}
 
 {% endblock content %}

@@ -21,6 +21,7 @@ feed_filenames = ["rss.xml", "atom.xml"]
 highlight_code = true
 highlight_theme = "catppuccin-latte"
 extra_syntaxes_and_themes = ["highlighting", "highlighting/catppuccin"]
+external_links_target_blank = true
 
 [extra]
 # Put all your custom variables here

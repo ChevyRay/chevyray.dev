@@ -33,3 +33,40 @@
         {{ page.summary | safe }}
     </div>
 {% endmacro post_preview %}
+
+{% macro paged_posts(permalink) %}
+    {% if paginator.number_pagers > 1 %}
+    <div class="pages">
+        {% for idx in range(start=0, end=paginator.number_pagers) %}
+            {% set idx = idx + 1 %}
+            {% if idx == paginator.current_index %}
+                {% if not loop.first %}
+                    <span>•</span>
+                {% endif %}
+                {{ idx }}
+            {% else %}
+                {% if loop.first %}
+                    <a href="{{ permalink }}">{{ idx }}</a>
+                {% else %}
+                    <span>•</span> <a href="{{ permalink }}page/{{ idx }}">{{ idx }}</a>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <div class="posts">
+        {% for page in paginator.pages %}
+            {{ macros::post_preview(page = page) }}
+        {% endfor %}
+    </div>
+
+    <div class="pagination">
+        {% if paginator.previous %}
+            <a class="prev" href="{{ paginator.previous }}"><i class="ri-arrow-left-line"></i> Newer Posts </a>
+        {% endif %}
+        {% if paginator.next %}
+            <a class="next" href="{{ paginator.next }}"> Older Posts <i class="ri-arrow-right-line"></i></a>
+        {% endif %}
+    </div>
+{% endmacro paged_posts %}

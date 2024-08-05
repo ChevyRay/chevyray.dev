@@ -16,10 +16,9 @@
             </div>
         {% endfor %}
     </div>
+
     <div class="tag-posts">
-        {% for page in term.pages %}
-            {{ macros::post_preview(page = page) }}
-        {% endfor %}
+        {{ macros::paged_posts(permalink="/tags/"~term.name~"/") }}
     </div>
 </div>
 

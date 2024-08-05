@@ -20,7 +20,7 @@ feed_filenames = ["rss.xml", "atom.xml"]
 
 # Tags
 taxonomies = [
-    { name = "tags", feed = true, render = true }
+    { name = "tags", feed = true, render = true, paginate_by = 10 }
 ]
 
 [markdown]

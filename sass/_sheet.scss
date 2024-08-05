@@ -476,6 +476,10 @@ blockquote {
 .tag-page {
     display: flex;
 
+    h1 {
+        margin-top: 0;
+    }
+
     .tag-nav {
         font-weight: 500;
         border-right: 4px dotted $surface2;

@@ -1,9 +1,13 @@
 {% extends "base.html" %}
+{% import "macros.html" as macros %}
 
 {% block content %}
 
-<p>
-    Taxonomy: [{{ taxonomy.name | safe }}]
-</p>
+<h1 class="tag-title"><i class="ri-price-tag-3-fill"></i> {{ term.name }}</h1>
+<hr>
+
+{% for page in term.pages %}
+    {{ macros::post_preview(page = page) }}
+{% endfor %}
 
 {% endblock content %}

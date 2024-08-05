@@ -19,7 +19,7 @@
         <span class="item">
             {% for tag in page.taxonomies.tags %}
             <span class="tag">
-                <a href=""><i class="ri-price-tag-3-fill"></i>{{ tag | safe }}</a>
+                <a href="/tags/{{ tag }}"><i class="ri-price-tag-3-fill"></i>{{ tag }}</a>
             </span>
             {% endfor %}
         </span>

@@ -258,7 +258,7 @@ h4 {
     margin-bottom: 2em;
 
     a {
-        opacity: 0.75;
+        opacity: 0.8;
     }
 
     a:not(:first-child) {
@@ -471,5 +471,11 @@ blockquote {
     }
     .lower {
         font-weight: bold;
+    }
+}
+
+.tag-title {
+    i {
+        font-size: 0.9em;
     }
 }

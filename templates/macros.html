@@ -102,13 +102,11 @@
         </div>
         <div class="tag-posts">
             {{ macros::pagination_numbers(permalink=permalink) }}
-
             <div class="posts">
                 {% for page in paginator.pages %}
                     {{ macros::post_preview(page = page) }}
                 {% endfor %}
             </div>
-
             {{ macros::pagination_numbers(permalink=permalink) }}
         </div>
     </div>

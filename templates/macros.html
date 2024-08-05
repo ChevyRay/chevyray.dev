@@ -16,13 +16,13 @@
             <i class="ri-time-fill"></i>
             {{ page.reading_time }} minute read
         </span>
-        <span class="item">
-            {%- for tag in page.taxonomies.tags -%}
-            <span class="tag">
-                <a href="/tags/{{ tag }}"><i class="ri-price-tag-3-fill"></i>{{ tag }}</a>
-            </span>
-            {%- endfor -%}
+        
+        {%- for tag in page.taxonomies.tags -%}
+        <span class="item tag">
+            <a href="/tags/{{ tag }}"><i class="ri-price-tag-3-fill"></i>{{ tag }}</a>
         </span>
+        {%- endfor -%}
+        
     </div>
 {%- endmacro post_meta -%}
 

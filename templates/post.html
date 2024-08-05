@@ -11,4 +11,42 @@
 
 {{ page.content | safe }}
 
+<div class="prev-next">
+    {% if page.lower %}
+        <a class="prev" href="{{ page.lower.permalink }}">
+            <div>
+                <i class="ri-arrow-left-line"></i>
+            </div>
+            <div>
+                <div class="upper">
+                    Prev Post
+                </div>
+                <div class="lower">
+                    {{ page.lower.title }}
+                </div>
+            </div>
+        </a>
+    {% endif %}
+
+    <div class="mid"></div>
+
+    {% if page.higher %}
+        <a class="next" href="{{ page.higher.permalink }}">
+            <div>
+                <div class="upper">
+                    Next Post
+                </div>
+                <div class="lower">
+                    {{ page.higher.title }}
+                </div>
+            </div>
+            <div>
+                <i class="ri-arrow-right-line"></i>
+            </div>
+        </a>
+    {% endif %}
+</div>
+
+{% include "feedback.html" %}
+
 {% endblock content %}

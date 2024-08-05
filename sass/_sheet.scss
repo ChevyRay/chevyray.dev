@@ -397,7 +397,7 @@ blockquote {
     }
 }
 
-.prev-next {
+.pagination {
     display: flex;
     margin-top: 1em;
     font-size: 1.1em;
@@ -418,7 +418,58 @@ blockquote {
     font-weight: 500;
     color: $overlay1;
 
+    span {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
     a {
         text-decoration: none;
+    }
+}
+
+.feedback {
+    font-style: italic;
+    color: $subtext0;
+    font-size: 0.9em;
+    a {
+        white-space: nowrap;
+    }
+}
+
+.prev-next {
+    display: flex;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    a {
+        text-decoration: none;
+    }
+    i {
+        font-size: 1.5em;
+    }
+    .upper {
+        font-size: 0.9em;
+    }
+    .prev {
+        display: flex;
+        align-items: center;
+        i {
+            margin-right: 10px;
+        }
+    }
+    .mid {
+        flex: 1;
+        min-width: 20px;
+    }
+    .next {
+        text-align: right;
+        display: flex;
+        align-items: center;
+        i {
+            margin-left: 10px;
+        }
+    }
+    .lower {
+        font-weight: bold;
     }
 }

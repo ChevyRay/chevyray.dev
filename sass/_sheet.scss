@@ -224,7 +224,7 @@ h4 {
     .blurb {
         flex: 1;
         font-family: 'title', sans-serif;
-        font-size: 1.2em;
+        font-size: 1.1em;
         line-height: 1.3em;
 
         position: relative;
@@ -391,35 +391,31 @@ blockquote {
     }
 }
 
-.pagination {
-    display: flex;
-    margin-top: 1em;
-    font-size: 1.1em;
-    font-weight: 500;
-
-    .prev {
-        flex: 1;
-    }
-    .next {
-        flex: 1;
-        text-align: right;
-    }
-}
-
 .pages {
     text-align: center;
     font-size: 1.1em;
     font-weight: 500;
-    color: $overlay1;
+    color: $text;
+    text-align: center;
 
-    span {
-        margin-left: 5px;
-        margin-right: 5px;
+    /*
+    > span {
+        &:not(.number) {
+            
+        }
+
+        &.number {
+            padding-left: 10px;
+            padding-right: 10px;
+    
+            &:not(:has(a)) {
+                background-color: $crust;
+            }
+        }
     }
-
     a {
         text-decoration: none;
-    }
+    }*/
 }
 
 .feedback {
@@ -468,12 +464,6 @@ blockquote {
     }
 }
 
-.tag-title {
-    i {
-        font-size: 0.9em;
-    }
-}
-
 .tag-page {
     display: flex;
 
@@ -483,15 +473,23 @@ blockquote {
 
     .tag-nav {
         font-weight: 600;
-        border-right: 4px dotted $surface2;
         padding-right: 20px;
         margin-right: 20px;
+
+        .tag-link {
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-bottom: 5px;
+
+            &:not(:has(a)) {
+                background-color: $crust;
+                color: $text;
+                border-radius: 10px;
+            }
+        }
+
         a {
             text-decoration: none;
-        }
-        span {
-            color: $text;
-            //font-style: italic;
         }
     }
 
@@ -503,7 +501,7 @@ blockquote {
 .archive-posts {
     margin-left: 20px;
     font-weight: 500;
-    
+
     .archive-item {
         display: flex;
 

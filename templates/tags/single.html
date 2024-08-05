@@ -3,11 +3,24 @@
 
 {% block content %}
 
-<h1 class="tag-title"><i class="ri-price-tag-3-fill"></i> {{ term.name }}</h1>
-<hr>
-
-{% for page in term.pages %}
-    {{ macros::post_preview(page = page) }}
-{% endfor %}
+<div class="tag-page">
+    <div class="tag-nav">
+        {% set tags = get_taxonomy(kind="tags") %}
+        {% for tag in tags.items %}
+            <div class="tag-link">
+                {% if tag.name == term.name %}
+                    <span><i class="ri-price-tag-3-line"></i> {{ tag.name }}</span>
+                {% else %}
+                    <a href="/tags/{{ tag.name }}"><i class="ri-price-tag-3-fill"></i> {{ tag.name }}</a>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+    <div class="tag-posts">
+        {% for page in term.pages %}
+            {{ macros::post_preview(page = page) }}
+        {% endfor %}
+    </div>
+</div>
 
 {% endblock content %}

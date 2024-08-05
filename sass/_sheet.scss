@@ -367,13 +367,6 @@ blockquote {
     color: $subtext0;
     font-style: italic;
 
-    /*a {
-        color: $blue;
-        &:hover {
-            color: $pink;
-        }
-    }*/
-
     i {
         font-size: 0.95em;
     }
@@ -477,5 +470,26 @@ blockquote {
 .tag-title {
     i {
         font-size: 0.9em;
+    }
+}
+
+.tag-page {
+    display: flex;
+
+    .tag-nav {
+        font-weight: 500;
+        border-right: 4px dotted $surface2;
+        padding-right: 20px;
+        margin-right: 20px;
+        a {
+            text-decoration: none;
+        }
+        span {
+            color: $text;
+        }
+    }
+
+    .tag-posts {
+        flex: 1;
     }
 }

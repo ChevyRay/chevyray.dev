@@ -1,7 +1,27 @@
 {% extends "base.html" %}
+{% import "macros.html" as macros %}
 
 {% block content %}
 
-
+<div class="tag-page">
+    <div class="tag-nav">
+        {% if term %}
+            {% set term_name = term.name %}
+        {% else %}
+            {% set term_name = "" %}
+        {% endif %}
+        <a href="/blog"><i class="ri-asterisk"></i> all posts</a>
+        {% set tags = get_taxonomy(kind="tags") %}
+        {% for tag in tags.items %}
+            <div class="tag-link">
+                {% if tag.name == term_name %}
+                    <span><i class="ri-price-tag-3-line"></i> {{ tag.name }}</span>
+                {% else %}
+                    <a href="/tags/{{ tag.name }}"><i class="ri-price-tag-3-fill"></i> {{ tag.name }}</a>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+</div>
 
 {% endblock content %}

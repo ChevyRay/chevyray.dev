@@ -4,4 +4,17 @@
 
 {{ page.content | safe }}
 
+{% set section = get_section(path="blog/_index.md") %}
+{% for year, pages in section.pages | group_by(attribute="year") %}
+    <h1>{{ year }}</h1>
+    <div class="archive-posts">
+        {% for page in pages %}
+        <div class="archive-item">
+            <div class="short-date">{{ page.date }}</div>
+            <a href="{{ page.permalink }}">{{ page.title }}</a>
+        </div>
+        {% endfor %}
+    </div>
+{% endfor %}
+
 {% endblock content %}

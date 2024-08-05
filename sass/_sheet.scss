@@ -17,6 +17,12 @@ h1 {
     font-family: 'title', sans-serif;
     font-weight: bold;
     color: $text;
+
+    &.latest {
+        border-bottom: 4px dotted $surface2;
+        margin-block-start: 0;
+        margin-block-end: 1em;
+    }
 }
 
 h2 {
@@ -145,7 +151,6 @@ hr {
             padding-left: 5px;
             padding-right: 5px;
             border-radius: 4px;
-            //border: 1px dotted $overlay1;
         }
     }
 }
@@ -255,7 +260,7 @@ h4 {
 .projects {
     display: flex;
     margin-top: 1em;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
 
     a {
         opacity: 0.8;
@@ -346,16 +351,12 @@ blockquote {
 }
 
 .post {
-    padding-top: 1em;
-    padding-bottom: 1em;
+    margin-block-start: 1em;
+    margin-block-end: 2em;
 
     h1 {
         font-size: 1.5em;
     }
-
-    /*&:not(:last-child) {
-        border-bottom: 4px dotted $surface2;
-    }*/
 
     a {
         text-decoration: none;
@@ -481,7 +482,7 @@ blockquote {
     }
 
     .tag-nav {
-        font-weight: 500;
+        font-weight: 600;
         border-right: 4px dotted $surface2;
         padding-right: 20px;
         margin-right: 20px;
@@ -490,10 +491,29 @@ blockquote {
         }
         span {
             color: $text;
+            //font-style: italic;
         }
     }
 
     .tag-posts {
         flex: 1;
+    }
+}
+
+.archive-posts {
+    margin-left: 20px;
+    font-weight: 500;
+    
+    .archive-item {
+        display: flex;
+
+        .short-date {
+            min-width: 6ch;
+            color: $overlay2;
+        }
+
+        a {
+            text-decoration: none;
+        }
     }
 }

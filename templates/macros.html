@@ -35,38 +35,57 @@
 {% endmacro post_preview %}
 
 {% macro paged_posts(permalink) %}
-    {% if paginator.number_pagers > 1 %}
-    <div class="pages">
-        {% for idx in range(start=0, end=paginator.number_pagers) %}
-            {% set idx = idx + 1 %}
-            {% if idx == paginator.current_index %}
-                {% if not loop.first %}
-                    <span>•</span>
-                {% endif %}
-                {{ idx }}
+    <div class="tag-page">
+        <div class="tag-nav">
+            {% if term %}
+                {% set term_name = term.name %}
+                <a href="/blog"><i class="ri-asterisk"></i> all posts</a>
             {% else %}
-                {% if loop.first %}
-                    <a href="{{ permalink }}">{{ idx }}</a>
-                {% else %}
-                    <span>•</span> <a href="{{ permalink }}page/{{ idx }}">{{ idx }}</a>
-                {% endif %}
+                {% set term_name = "" %}
+                <span><i class="ri-asterisk"></i> all posts</span>
             {% endif %}
-        {% endfor %}
-    </div>
-    {% endif %}
+            {% set tags = get_taxonomy(kind="tags") %}
+            {% for tag in tags.items %}
+                <div class="tag-link">
+                    {% if tag.name == term_name %}
+                        <span><i class="ri-price-tag-3-line"></i> {{ tag.name }}</span>
+                    {% else %}
+                        <a href="/tags/{{ tag.name }}"><i class="ri-price-tag-3-fill"></i> {{ tag.name }}</a>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+        <div class="tag-posts">
+            {% if paginator.number_pagers > 1 %}
+                <div class="pages">
+                    {% for idx in range(start=0, end=paginator.number_pagers) %}
+                        {% set idx = idx + 1 %}
+                        {% if not loop.first %}
+                            <span>•</span>
+                        {% endif %}
+                        {% if idx == paginator.current_index %}
+                            {{ idx }}
+                        {% else %}
+                            <a href="{{ permalink }}page/{{ idx }}">{{ idx }}</a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                {% endif %}
 
-    <div class="posts">
-        {% for page in paginator.pages %}
-            {{ macros::post_preview(page = page) }}
-        {% endfor %}
-    </div>
+                <div class="posts">
+                    {% for page in paginator.pages %}
+                        {{ macros::post_preview(page = page) }}
+                    {% endfor %}
+                </div>
 
-    <div class="pagination">
-        {% if paginator.previous %}
-            <a class="prev" href="{{ paginator.previous }}"><i class="ri-arrow-left-line"></i> Newer Posts </a>
-        {% endif %}
-        {% if paginator.next %}
-            <a class="next" href="{{ paginator.next }}"> Older Posts <i class="ri-arrow-right-line"></i></a>
-        {% endif %}
+                <div class="pagination">
+                    {% if paginator.previous %}
+                        <a class="prev" href="{{ paginator.previous }}"><i class="ri-arrow-left-line"></i> Newer Posts </a>
+                    {% endif %}
+                    {% if paginator.next %}
+                        <a class="next" href="{{ paginator.next }}"> Older Posts <i class="ri-arrow-right-line"></i></a>
+                    {% endif %}
+                </div>
+        </div>
     </div>
 {% endmacro paged_posts %}

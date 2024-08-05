@@ -1,9 +1,9 @@
 <p class="feedback">
-    {% if page %}
-        {% set path = page.relative_path %}
-    {% else %}
-        {% set path = section.relative_path %}
-    {% endif %}
+    {%- if page -%}
+        {%- set path = page.relative_path -%}
+    {%- else -%}
+        {%- set path = section.relative_path -%}
+    {%- endif -%}
     If you find errors or have suggestions, you can visit the
     <a href="https://github.com/ChevyRay/chevyray.dev/tree/main/content/{{ path }}" target="_blank"><i class="ri-github-fill"></i>
     source code for this page</a> directly to file an issue or submit a pull request.

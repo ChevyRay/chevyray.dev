@@ -1,11 +1,11 @@
-{% macro post_meta(page) %}
-    {% if page.updated %}
-        {% set prefix = "Updated" %}
-        {% set date = page.updated %}
-    {% else %}
-        {% set prefix = "Posted" %}
-        {% set date = page.date %}
-    {% endif %}
+{%- macro post_meta(page) -%}
+    {%- if page.updated -%}
+        {%- set prefix = "Updated" -%}
+        {%- set date = page.updated -%}
+    {%- else -%}
+        {%- set prefix = "Posted" -%}
+        {%- set date = page.date -%}
+    {%- endif -%}
     <div class="post-meta">
         <span class="item">
             <i class="ri-calendar-schedule-fill"></i>
@@ -17,97 +17,97 @@
             {{ page.reading_time }} minute read
         </span>
         <span class="item">
-            {% for tag in page.taxonomies.tags %}
+            {%- for tag in page.taxonomies.tags -%}
             <span class="tag">
                 <a href="/tags/{{ tag }}"><i class="ri-price-tag-3-fill"></i>{{ tag }}</a>
             </span>
-            {% endfor %}
+            {%- endfor -%}
         </span>
     </div>
-{% endmacro post_meta %}
+{%- endmacro post_meta -%}
 
-{% macro post_preview(page) %}
+{%- macro post_preview(page) -%}
     <div class="post">
         <h1><a href="{{ page.permalink | safe }}">{{ page.title | safe }}</a></h1>
         {{ macros::post_meta(page = page) }}
         {{ page.summary | safe }}
     </div>
-{% endmacro post_preview %}
+{%- endmacro post_preview -%}
 
-{% macro pagination_numbers(permalink) %}
-    {% if paginator.number_pagers > 1 %}
+{%- macro pagination_numbers(permalink) -%}
+    {%- if paginator.number_pagers > 1 -%}
         <div class="pages">
-            {% if paginator.current_index != 1 %}
+            {%- if paginator.current_index != 1 -%}
                 <div><a href="{{ permalink }}1"><i class="ri-arrow-left-double-fill"></i></a></div>
-            {% else %}
+            {%- else -%}
                 <div><i class="ri-arrow-left-double-fill"></i></div>
-            {% endif %}
+            {%- endif -%}
 
-            {% if paginator.current_index > 1 %}
+            {%- if paginator.current_index > 1 -%}
                 <div><a href="{{ permalink }}{{ paginator.current_index - 1 }}"><i class="ri-arrow-left-s-line"></i></a></div>
-            {% else %}
+            {%- else -%}
                 <div><i class="ri-arrow-left-s-line"></i></div>
-            {% endif %}
+            {%- endif -%}
 
-            {% for idx in range(start=0, end=paginator.number_pagers) %}
-                {% set idx = idx + 1 %}
-                {% if idx == paginator.current_index %}
+            {%- for idx in range(start=0, end=paginator.number_pagers) -%}
+                {%- set idx = idx + 1 -%}
+                {%- if idx == paginator.current_index -%}
                     <div class="number"><span>{{ idx }}</span></div>
-                {% else %}
+                {%- else -%}
                     <div class="number"><a href="{{ permalink }}{{ idx }}"><span>{{ idx }}</span></a></div>
-                {% endif %}
-            {% endfor %}
+                {%- endif -%}
+            {%- endfor -%}
 
-            {% if paginator.current_index < paginator.number_pagers %}
+            {%- if paginator.current_index < paginator.number_pagers -%}
                 <div><a href="{{ permalink }}{{ paginator.current_index + 1 }}"><i class="ri-arrow-right-s-line"></i></a></div>
-            {% else %}
+            {%- else -%}
                 <div><i class="ri-arrow-right-s-line"></i></div>
-            {% endif %}
+            {%- endif -%}
 
-            {% if paginator.current_index != paginator.number_pagers %}
+            {%- if paginator.current_index != paginator.number_pagers -%}
                 <div><a href="{{ permalink }}{{ paginator.number_pagers }}"><i class="ri-arrow-right-double-fill"></i></a></div>
-            {% else %}
+            {%- else -%}
                 <div><i class="ri-arrow-right-double-fill"></i></div>
-            {% endif %}
+            {%- endif -%}
         </div>
-    {% endif %}
-{% endmacro pagination_numbers %}
+    {%- endif -%}
+{%- endmacro pagination_numbers -%}
 
-{% macro paged_posts(permalink) %}
+{%- macro paged_posts(permalink) -%}
     <div class="tag-page">
         <div class="tag-nav">
-            {% if term %}
-                {% set term_name = term.name %}
+            {%- if term -%}
+                {%- set term_name = term.name -%}
                 <div class="tag-link">
                     <a href="/blog"><i class="ri-asterisk"></i> all posts</a>
                 </div>
-            {% else %}
-                {% set term_name = "" %}
+            {%- else -%}
+                {%- set term_name = "" -%}
                 <div class="tag-link">
                     <i class="ri-asterisk"></i> all posts
                 </div>
-            {% endif %}
-            {% set tags = get_taxonomy(kind="tags") %}
-            {% for tag in tags.items %}
-                {% if tag.name == term_name %}
+            {%- endif -%}
+            {%- set tags = get_taxonomy(kind="tags") -%}
+            {%- for tag in tags.items -%}
+                {%- if tag.name == term_name -%}
                     <div class="tag-link">
                         <i class="ri-price-tag-3-line"></i> {{ tag.name }}
                     </div>
-                {% else %}
+                {%- else -%}
                     <div class="tag-link">
                         <a href="/tags/{{ tag.name }}"><i class="ri-price-tag-3-fill"></i> {{ tag.name }}</a>
                     </div>
-                {% endif %}
-            {% endfor %}
+                {%- endif -%}
+            {%- endfor -%}
         </div>
         <div class="tag-posts">
             {{ macros::pagination_numbers(permalink=permalink) }}
             <div class="posts">
-                {% for page in paginator.pages %}
+                {%- for page in paginator.pages -%}
                     {{ macros::post_preview(page = page) }}
-                {% endfor %}
+                {%- endfor -%}
             </div>
             {{ macros::pagination_numbers(permalink=permalink) }}
         </div>
     </div>
-{% endmacro paged_posts %}
+{%- endmacro paged_posts -%}

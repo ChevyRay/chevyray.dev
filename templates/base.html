@@ -6,24 +6,24 @@
     <!-- meta name="viewport" content="width=device-width, minimum-scale=1" -->
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
 
-    {% if section %}
-        {% if section.title == "Home" %}
-            {% set title = config.title %}
-            {% set desc = config.description %}
-        {% else %}
-            {% set title = config.title ~ " | " ~ section.title %}
-            {% set desc = section.description %}
-        {% endif %}
-        {% set url = section.permalink %}
-    {% elif page %}
-        {% set title = config.title ~ " | " ~ page.title %}
-        {% set desc = page.description %}
-        {% set url = page.permalink %}
-    {% else %}
-        {% set title = config.title %}
-        {% set desc = config.description %}
-        {% set url = config.base_url %}
-    {% endif %}
+    {%- if section -%}
+        {%- if section.title == "Home" -%}
+            {%- set title = config.title -%}
+            {%- set desc = config.description -%}
+        {%- else -%}
+            {%- set title = config.title ~ " | " ~ section.title -%}
+            {%- set desc = section.description -%}
+        {%- endif -%}
+        {%- set url = section.permalink -%}
+    {%- elif page -%}
+        {%- set title = config.title ~ " | " ~ page.title -%}
+        {%- set desc = page.description -%}
+        {%- set url = page.permalink -%}
+    {%- else -%}
+        {%- set title = config.title -%}
+        {%- set desc = config.description -%}
+        {%- set url = config.base_url -%}
+    {%- endif -%}
 
     <title>{{ title }}</title>
     <meta name="description" content="{{ desc }}">
@@ -74,8 +74,8 @@
     </div>
     <div class="page">
         <div class="column content">
-            {% block content %}
-            {% endblock content %}
+            {%- block content -%}
+            {%- endblock content -%}
         </div>
     </div>
     <div class="footer">

@@ -1,7 +1,7 @@
-{% extends "base.html" %}
-{% import "macros.html" as macros %}
+{%- extends "base.html" -%}
+{%- import "macros.html" as macros -%}
 
-{% block content %}
+{%- block content -%}
 
 <div class="about">
     <div class="blurb">
@@ -36,16 +36,16 @@
 
 <h1 class="latest">Latest Posts</h1>
 
-{% set section = get_section(path="blog/_index.md") %}
-{% for page in range(start=0,end=5) %}
-    {% if not section.pages[page] %}
-        {% break %}
-    {% endif %}
+{%- set section = get_section(path="blog/_index.md") -%}
+{%- for page in range(start=0,end=5) -%}
+    {%- if not section.pages[page] -%}
+        {%- break -%}
+    {%- endif -%}
     {{ macros::post_preview(page = section.pages[page]) }}
-{% endfor %}
+{%- endfor -%}
 
 <div class="pagination">
     <a class="next" href="/blog">More Posts <i class="ri-arrow-right-line"></i></a> 
 </div>
 
-{% endblock content %}
+{%- endblock content -%}

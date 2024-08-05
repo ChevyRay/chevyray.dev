@@ -396,26 +396,25 @@ blockquote {
     font-size: 1.1em;
     font-weight: 500;
     color: $text;
-    text-align: center;
 
-    /*
-    > span {
-        &:not(.number) {
-            
+    > div {
+        display: inline;
+    }
+
+    .number {
+        span {
+            padding-left: 8px;
+            padding-right: 8px;
         }
-
-        &.number {
-            padding-left: 10px;
-            padding-right: 10px;
-    
-            &:not(:has(a)) {
-                background-color: $crust;
-            }
+        &:not(:has(a)) {
+            background-color: $crust;
+            border-radius: 5px;
         }
     }
+
     a {
         text-decoration: none;
-    }*/
+    }
 }
 
 .feedback {

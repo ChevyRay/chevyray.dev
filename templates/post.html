@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% import "macros.html" as macros %}
+
+{% block content %}
+
+<div class="post-top">
+    <h1>{{ page.title | safe }}</h1>
+    {{ macros::post_meta(page = page) }}
+</div>
+<hr>
+
+{{ page.content | safe }}
+
+{% endblock content %}

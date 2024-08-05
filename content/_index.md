@@ -1,5 +1,6 @@
 +++
 title = "Home"
+description = "Home page."
 +++
 
 # The Fellowship of the Ring

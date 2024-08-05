@@ -1,0 +1,35 @@
+{% macro post_meta(page) %}
+    {% if page.updated %}
+        {% set prefix = "Updated" %}
+        {% set date = page.updated %}
+    {% else %}
+        {% set prefix = "Posted" %}
+        {% set date = page.date %}
+    {% endif %}
+    <div class="post-meta">
+        <span class="item">
+            <i class="ri-calendar-schedule-fill"></i>
+            {{ prefix }}
+            <span class="date">{{ date | safe }}</span>
+        </span>
+        <span class="item">
+            <i class="ri-time-fill"></i>
+            {{ page.reading_time }} minute read
+        </span>
+        <span class="item">
+            {% for tag in page.taxonomies.tags %}
+            <span class="tag">
+                <a href=""><i class="ri-price-tag-3-fill"></i>{{ tag | safe }}</a>
+            </span>
+            {% endfor %}
+        </span>
+    </div>
+{% endmacro post_meta %}
+
+{% macro post_preview(page) %}
+    <div class="post">
+        <h1><a href="{{ page.permalink | safe }}">{{ page.title | safe }}</a></h1>
+        {{ macros::post_meta(page = page) }}
+        {{ page.summary | safe }}
+    </div>
+{% endmacro post_preview %}

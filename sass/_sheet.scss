@@ -259,6 +259,12 @@ hr {
             border-radius: 4px;
         }
     }
+
+    > p {
+        > img {
+            border-radius: 5px;
+        }
+    }
 }
 
 .footer {
@@ -294,11 +300,12 @@ pre:has(code) {
     border: 2px solid $surface0;
     border-radius: 10px;
     padding: 10px;
+    margin-block: 0 1em;
 
     overflow-x: auto;
 }
 
-blockquote~pre {
+blockquote+pre {
     border-top-left-radius: 0;
 }
 
@@ -330,7 +337,7 @@ blockquote:has(+pre) {
 blockquote:not(:has(+pre)) {
     background-color: $mantle;
     //padding: 1px 20px 1px 20px;
-    padding: 0 1rem 0 1rem;
+    padding: 1px 1rem 1px 1rem;
     border-radius: 10px;
     margin-block: 1rem 1rem;
     font-style: italic;
@@ -365,18 +372,23 @@ blockquote:not(:has(+pre)) {
         }
     }
 
-    &:has(h1:first-child) {
+    &:has(i:first-child) {
         background-color: transparent;
+        color: $subtext1;
+    }
+
+    &:has(i.ri-error-warning-line) {
         color: $red;
-        a, h1 {
-            color: $red;
-        }
-        a:hover {
-            color: $text;
-        }
-        code {
-            border-color: $red;
-        }
+        a, h1 { color: $red; }
+        a:hover { color: $text; }
+        code { border-color: $red; }
+    }
+
+    &:has(i.ri-lightbulb-line) {
+        color: $blue;
+        a, h1 { color: $blue; }
+        a:hover { color: $text; }
+        code { border-color: $blue; }
     }
 
     &:has(h2:first-child) {
@@ -614,5 +626,39 @@ ul {
     list-style-type: disc;
     ul > li::marker {
         color: $overlay1;
+    }
+}
+
+ul {
+    margin-block: 1rem 1rem;
+    ul {
+        margin-block: 0 0;
+    }
+}
+
+ul:has(i) {
+    padding-inline-start: 20px;
+}
+
+li:has(i:first-child) {
+    list-style: none;
+    i {
+        margin-right: 2px;
+    }
+}
+
+.red {
+    color: $red;
+    a {
+        color: $red;
+        :hover { color: $text; }
+    }
+}
+
+.blue {
+    color: $blue;
+    a {
+        color: $blue;
+        :hover { color: $text; }
     }
 }

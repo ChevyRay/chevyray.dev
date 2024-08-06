@@ -28,9 +28,7 @@ When Mr. [Bilbo Baggins](https://en.wikipedia.org/wiki/Bilbo_Baggins) of Bag End
 [`Option::take_if`](https://doc.rust-lang.org/std/option/enum.Option.html#method.take_if),
 there was much talk and excitement in Hobbiton.
 
-<!-- #### src/main.rs -->
-#### src/main.rs
-
+> src/main.rs
 ```rust
 fn main() {
     // Iterate over all integers from 4 to 10

@@ -45,7 +45,7 @@ h3 {
     font-family: 'title', sans-serif;
     font-weight: bold;
     font-size: 1.25rem;
-    color: $subtext0;
+    color: $overlay1;
 }
 
 a {
@@ -292,36 +292,45 @@ pre:has(code) {
     //background-color: $base !important;
     font-size: 0.9rem;
     border: 2px solid $surface0;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 10px;
 
     overflow-x: auto;
 }
 
-h4 + pre {
+blockquote~pre {
     border-top-left-radius: 0;
-    margin-top: -3px;
 }
 
-h4 {
+blockquote:has(+pre) {
+    display: inline-block;
+
     font-family: 'code' !important;
     font-size: 0.8rem;
     font-weight: 600;
-
-    background-color: $surface0;
-    padding: 0 20px 0 20px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-
     margin: 0;
     margin-block: 0 0;
-    display: inline-block;
+
+    background-color: $surface0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+
+    position: relative;
+    top: 3px;
+
+    p {
+        margin-block: 0 0 !important;
+        margin: 0 !important;
+        position: inherit;
+    }
 }
 
-blockquote {
+blockquote:not(:has(+pre)) {
     background-color: $mantle;
     //padding: 1px 20px 1px 20px;
-    padding: 1px 1rem 1px 1rem;
+    padding: 0 1rem 0 1rem;
     border-radius: 10px;
     margin-block: 1rem 1rem;
     font-style: italic;
@@ -580,5 +589,30 @@ blockquote {
         i {
             font-size: 0.9rem;
         }
+    }
+}
+
+.toc-title {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: $subtext0;
+}
+
+.toc {
+    ul {
+        font-weight: 700;
+        ul {
+            font-weight: 500;
+        }
+    }
+    a {
+        text-decoration: none;
+    }
+}
+
+ul {
+    list-style-type: disc;
+    ul > li::marker {
+        color: $overlay1;
     }
 }

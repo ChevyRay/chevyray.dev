@@ -260,10 +260,16 @@ hr {
         }
     }
 
-    > p {
-        > img {
-            border-radius: 5px;
-        }
+    img {
+        border-radius: 5px;
+    }
+
+    figcaption {
+        text-align: center;
+        font-style: italic;
+        font-size: 0.95rem;
+        padding-top: 5px;
+        color: $subtext1;
     }
 }
 
@@ -412,6 +418,7 @@ blockquote:not(:has(+pre)) {
 
     h1 {
         font-size: 1.5rem;
+        a { text-decoration: none; }
     }
 }
 
@@ -647,18 +654,19 @@ li:has(i:first-child) {
     }
 }
 
-.red {
-    color: $red;
-    a {
-        color: $red;
-        :hover { color: $text; }
-    }
+iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    margin: 0;
+    padding: 0;
+    //margin-block: 1rem 1rem;
 }
 
-.blue {
-    color: $blue;
-    a {
-        color: $blue;
-        :hover { color: $text; }
-    }
-}
+/*
+iframe:not(+p) {
+    margin-block-end: 1rem;
+}*/
+
+.red { color: $red; }
+
+.blue { color: $blue; }

@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "https://chevyray.pages.dev"
+base_url = "https://chevyray.dev"
 
 # The site title and description; used in feeds by default.
 title = "Chevy Ray"

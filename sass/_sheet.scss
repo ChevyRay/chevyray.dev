@@ -30,7 +30,7 @@ h1 {
     &.latest {
         border-bottom: 4px dotted $surface2;
         margin-block-start: 0;
-        margin-block-end: 1em;
+        margin-block-end: 1rem;
     }
 }
 
@@ -38,12 +38,13 @@ h2 {
     font-family: 'title', sans-serif;
     font-weight: bold;
     color: $subtext1;
-    margin-block: 2em 1em;
+    margin-block: 2rem 1rem;
 }
 
 h3 {
     font-family: 'title', sans-serif;
     font-weight: bold;
+    font-size: 1.25rem;
     color: $subtext0;
 }
 
@@ -247,7 +248,7 @@ hr {
     margin-bottom: 2em;
 
     p {
-        margin-block: 1em 1em;
+        margin-block: 1rem 1rem;
 
         code {
             background-color: $crust;
@@ -289,7 +290,7 @@ hr {
 
 pre:has(code) {
     //background-color: $base !important;
-    font-size: 16px;
+    font-size: 0.9rem;
     border: 2px solid $surface0;
     border-radius: 5px;
     padding: 10px;
@@ -322,7 +323,7 @@ blockquote {
     //padding: 1px 20px 1px 20px;
     padding: 1px 1rem 1px 1rem;
     border-radius: 10px;
-    margin-block: 1em 1em;
+    margin-block: 1rem 1rem;
     font-style: italic;
 
     code {
@@ -338,7 +339,7 @@ blockquote {
         font-weight: 700;
         opacity: 75%;
         line-height: 1em;
-        margin-block: 1em 1em;
+        margin-block: 1rem 1rem;
 
         &:first-child {
             font-size: 1.1rem;
@@ -389,8 +390,8 @@ blockquote {
 }
 
 .post {
-    margin-block-start: 1em;
-    margin-block-end: 2em;
+    margin-block-start: 1rem;
+    margin-block-end: 2rem;
 
     h1 {
         font-size: 1.5rem;
@@ -579,5 +580,10 @@ blockquote {
     }
     .archive-posts {
         font-size: 1.2rem;
+    }
+    .feedback {
+        i {
+            font-size: 0.9rem;
+        }
     }
 }

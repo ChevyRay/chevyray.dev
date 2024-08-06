@@ -1,8 +1,17 @@
+html {
+    font-family: 'regular', sans-serif;
+    font-size: 18px;
+}
+
+@media(max-width: 572px) {
+    html {
+        font-size: 16px;
+    }
+}
+
 body {
     background-color: $base;
     color: $text;
-    font-family: 'regular', sans-serif;
-    font-size: 18px;
     width: 100%;
 }
 
@@ -58,158 +67,35 @@ hr {
 
 .header {
     background-color: $pink;
-    padding-top: 25px;
+    padding-top: 20px;
     padding-bottom: 40px;
-
-    --a: 90deg; /* the angle of the spikes*/
-    --s: 40px;  /* the size of spikes*/
+    --a: 90deg; // the angle of the spikes
+    --s: 40px;  // the size of spikes
     --mask: conic-gradient(from calc(var(--a)/-2) at bottom, #0000,#000 1deg var(--a),#0000 calc(var(--a) + 1deg)) 50%/var(--s);
     -webkit-mask: var(--mask);
     mask: var(--mask);
 
-    .column {
-        color: $base;
-        display: flex;
-        align-items: center;
-    }
-
     .title {
-        flex: 1;
-        margin-right: 20px;
-
-        a {
-            text-decoration: none;
+        color: $base;
+        .main {
+            font-family: 'title', sans-serif;
+            font-size: 2rem;
         }
-
-        h1 {
-            color: $base;
-            font-weight: bold;
-            font-size: 2.5em;
-            line-height: 1em;
-            margin-block: 0 0;
-        }
-    
-        h2 {
-            color: $base;
-            font-weight: bold;
-            margin-block: 0 0;
+        .sub {
+            font-family: 'title', sans-serif;
+            font-size: 1.5rem;
         }
     }
-
-    .links {
-        color: $base;
-        text-align: right;
-
-        i {
-            margin-left: 2px;
-        }
-
+    .menu {
         a {
-            color: $base;
             text-decoration: none;
+            color: $base;
             font-weight: bold;
-
             &:hover {
-                color: $text;
+                color: $blue;
             }
         }
-
-        input {
-            background-color: $base;
-            border: 0;
-            font-family: 'regular';
-            font-size: 0.9em;
-            color: $text;
-            outline: none;
-            border-radius: 5px;
-            padding: 2px 10px 0 10px;
-        }
-
-        .link {
-            white-space: nowrap;
-        }
     }
-}
-
-.page {
-    //background-color: $base;
-    //padding: 25px;
-    min-height: calc(100vh - 250px);
-}
-
-.content {
-    margin-top: 2em;
-    margin-bottom: 2em;
-
-    p {
-        margin-block: 1em 1em;
-
-        code {
-            background-color: $crust;
-            font-style: normal;
-            font-size: 0.9em;
-            padding-left: 5px;
-            padding-right: 5px;
-            border-radius: 4px;
-        }
-    }
-}
-
-.footer {
-    border-top: 10px dotted $pink;
-    color: $subtext1;
-    text-align: center;
-
-    p {
-        font-style: italic;
-    }
-
-    > div {
-        margin-top: 2em;
-        margin-bottom: 2em;
-    }
-
-    a {
-        text-decoration: none;
-    }
-
-    i {
-        margin-left: 5px;
-    }
-
-    .theme i {
-        font-size: 1.5em;
-    }
-}
-
-pre:has(code) {
-    //background-color: $base !important;
-    font-size: 16px;
-    border: 2px solid $surface0;
-    border-radius: 5px;
-    padding: 10px;
-
-    overflow-x: auto;
-}
-
-h4 + pre {
-    border-top-left-radius: 0;
-    margin-top: -3px;
-}
-
-h4 {
-    font-family: 'code' !important;
-    font-size: 0.8em;
-    font-weight: 600;
-
-    background-color: $surface0;
-    padding: 0 20px 0 20px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-
-    margin: 0;
-    margin-block: 0 0;
-    display: inline-block;
 }
 
 .about {
@@ -224,7 +110,7 @@ h4 {
     .blurb {
         flex: 1;
         font-family: 'title', sans-serif;
-        font-size: 1.1em;
+        font-size: 1.1rem;
         line-height: 1.3em;
 
         position: relative;
@@ -280,6 +166,147 @@ h4 {
     }
 }
 
+@media not (max-width: 572px) {
+    .header {
+        .column {
+            display: flex;
+            align-items: center;
+        }
+        .title {
+            flex: 1;
+        }
+        .menu {
+            .links {
+                .link {
+                    display: flex;
+                    flex-direction: row-reverse;
+                    i { margin-left: 10px; }
+                }
+            }
+            a { font-size: 1.1rem; }
+            i { font-size: 1.1rem; }
+        }
+    }
+}
+
+@media(max-width: 572px) {
+    .header {
+        .column { display: block; }
+        .title {
+            text-align: center;
+        }
+        .menu {
+            text-align: center;
+            .links {
+                display: inline-block;
+                margin-top: 10px;
+                .link {
+                    display: inline-block;
+                    text-align: center;
+                    &:not(:last-child) {
+                        margin-right: 20px;
+                    }
+                }
+            }
+            a {
+                font-size: 1.2rem;
+                line-height: 1.5rem;
+            }
+            i { font-size: 1.5rem; }
+        }
+    }
+
+    .about {
+        .blurb {
+            font-size: 0.8rem;
+            line-height: 1.0rem;
+        }
+        .portrait {
+            width: 100px;
+            height: 100px;
+        }
+    }
+}
+
+.page {
+    min-height: calc(100vh - 250px);
+}
+
+.content {
+    margin-top: 2em;
+    margin-bottom: 2em;
+
+    p {
+        margin-block: 1em 1em;
+
+        code {
+            background-color: $crust;
+            font-style: normal;
+            font-size: 0.9rem;
+            padding-left: 5px;
+            padding-right: 5px;
+            border-radius: 4px;
+        }
+    }
+}
+
+.footer {
+    border-top: 10px dotted $pink;
+    color: $subtext1;
+    text-align: center;
+
+    p {
+        font-style: italic;
+    }
+
+    > div {
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    i {
+        margin-left: 5px;
+    }
+
+    .theme i {
+        font-size: 1.5rem;
+    }
+}
+
+pre:has(code) {
+    //background-color: $base !important;
+    font-size: 16px;
+    border: 2px solid $surface0;
+    border-radius: 5px;
+    padding: 10px;
+
+    overflow-x: auto;
+}
+
+h4 + pre {
+    border-top-left-radius: 0;
+    margin-top: -3px;
+}
+
+h4 {
+    font-family: 'code' !important;
+    font-size: 0.8rem;
+    font-weight: 600;
+
+    background-color: $surface0;
+    padding: 0 20px 0 20px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+    margin: 0;
+    margin-block: 0 0;
+    display: inline-block;
+}
+
 blockquote {
     background-color: $mantle;
     padding: 1px 20px 1px 20px;
@@ -296,14 +323,14 @@ blockquote {
     h1, h2 {
         font-family: 'regular';
         font-style: normal;
-        font-size: 1em;
+        font-size: 1rem;
         font-weight: 700;
         opacity: 75%;
         line-height: 1em;
         margin-block: 1em 1em;
 
         &:first-child {
-            font-size: 1.1em;
+            font-size: 1.1rem;
         }
     }
 
@@ -355,7 +382,7 @@ blockquote {
     margin-block-end: 2em;
 
     h1 {
-        font-size: 1.5em;
+        font-size: 1.5rem;
     }
 
     a {
@@ -364,12 +391,12 @@ blockquote {
 }
 
 .post-meta {
-    font-size: 0.9em;
+    font-size: 0.9rem;
     color: $subtext0;
     font-style: italic;
 
     i {
-        font-size: 0.95em;
+        font-size: 0.95rem;
     }
 
     .item {
@@ -393,7 +420,7 @@ blockquote {
 
 .pages {
     text-align: center;
-    font-size: 1.1em;
+    font-size: 1.1rem;
     font-weight: 500;
     color: $text;
 
@@ -420,7 +447,7 @@ blockquote {
 .feedback {
     font-style: italic;
     color: $subtext0;
-    font-size: 0.9em;
+    font-size: 0.9rem;
     a {
         white-space: nowrap;
     }
@@ -434,10 +461,10 @@ blockquote {
         text-decoration: none;
     }
     i {
-        font-size: 1.5em;
+        font-size: 1.5rem;
     }
     .upper {
-        font-size: 0.9em;
+        font-size: 0.9rem;
     }
     .prev {
         display: flex;
@@ -518,5 +545,5 @@ blockquote {
 .more-posts {
     text-align: right;
     font-weight: 500;
-    font-size: 1.1em;
+    font-size: 1.1rem;
 }

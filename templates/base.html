@@ -50,7 +50,8 @@
     <meta name="theme-color" content="#ffffff"> 
 
     <!-- stylesheets -->
-    <link rel="stylesheet" href="/latte.css" id="sheet-link">
+    {% set hash = get_hash(path="public/latte.css", sha_type=256, base64=true) %}
+    <link rel="stylesheet" href="/latte.css?{{ hash }}" id="sheet-link">
 </head>
 <body>
     <div class="header">
@@ -119,5 +120,6 @@
         </div>
     </div>
 </body>
-<script src="/js/date-formatter.js"></script>
+{% set hash = get_hash(path="static/js/date-formatter.js", sha_type=256, base64=true) %}
+<script src="/js/date-formatter.js?{{ hash }}"></script>
 </html>

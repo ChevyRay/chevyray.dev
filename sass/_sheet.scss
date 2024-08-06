@@ -5,7 +5,7 @@ html {
 
 @media(max-width: 572px) {
     html {
-        font-size: 16px;
+        font-size: 15px;
     }
 }
 
@@ -80,6 +80,13 @@ hr {
         .main {
             font-family: 'title', sans-serif;
             font-size: 2rem;
+            a {
+                text-decoration: none;
+                color: $base;
+                &:hover {
+                    color: $blue;
+                }
+            }
         }
         .sub {
             font-family: 'title', sans-serif;
@@ -103,7 +110,7 @@ hr {
     align-items: center;
     margin-bottom: 2em;
 
-    div:first-child {
+    > div:first-child {
         margin-right: 20px;
     }
 
@@ -215,15 +222,18 @@ hr {
             i { font-size: 1.5rem; }
         }
     }
-
     .about {
         .blurb {
             font-size: 0.8rem;
             line-height: 1.0rem;
+            border-radius: 30px;
+            border: 2px solid $pink;
+            padding: 1px 10px 1px 10px;
+            text-align: center;
         }
         .portrait {
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
         }
     }
 }
@@ -309,7 +319,8 @@ h4 {
 
 blockquote {
     background-color: $mantle;
-    padding: 1px 20px 1px 20px;
+    //padding: 1px 20px 1px 20px;
+    padding: 1px 1rem 1px 1rem;
     border-radius: 10px;
     margin-block: 1em 1em;
     font-style: italic;
@@ -394,21 +405,17 @@ blockquote {
     font-size: 0.9rem;
     color: $subtext0;
     font-style: italic;
-
     i {
         font-size: 0.95rem;
     }
-
     .item {
-        margin-right: 10px;
-        //white-space: nowrap;
+        margin-right: 0.5rem;
     }
     .tag {
         font-family: 'regular';
-        //font-weight: bold;
         font-weight: 500;
         text-decoration: none;
-        margin-right: 10px;
+        margin-right: 0.5rem;
         i {
             margin-right: 4px;
         }

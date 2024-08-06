@@ -506,7 +506,6 @@ blockquote {
 
     .tag-nav {
         font-weight: 600;
-        padding-right: 20px;
         margin-right: 20px;
 
         .tag-link {
@@ -553,4 +552,32 @@ blockquote {
     text-align: right;
     font-weight: 500;
     font-size: 1.1rem;
+}
+
+
+@media(max-width: 572px) {
+    .tag-page {
+        display: block;
+        .tag-nav {
+            display: flex;
+            margin-bottom: 1rem;
+            .tag-link {
+                flex: 1;
+                padding: 10px 10px 10px 10px;
+                text-align: center;
+                line-height: 1.2rem;
+
+                i {
+                    display: block;
+                    padding-bottom: 4px;
+                }
+            }
+        }
+        .tag-posts {
+            padding-bottom: 0.5rem;
+        }
+    }
+    .archive-posts {
+        font-size: 1.2rem;
+    }
 }

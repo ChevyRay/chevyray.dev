@@ -27,9 +27,12 @@
 
 {%- macro post_preview(page) -%}
     <div class="post">
-        <h1><a href="{{ page.permalink | safe }}">{{ page.title | safe }}</a></h1>
+        <h1><a href="{{ page.permalink }}">{{ page.title | safe }}</a></h1>
         {{ macros::post_meta(page = page) }}
-        {{ page.summary | safe }}
+        {% if page.summary %}
+            {{ page.summary | safe }}
+            <a href="{{ page.permalink }}">...keep reading <i class="ri-arrow-right-line"></i></a>
+        {% endif %}
     </div>
 {%- endmacro post_preview -%}
 

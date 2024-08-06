@@ -1,14 +1,10 @@
 +++
 title = "Second Post"
 slug = "second-post"
-summary = "Summary of the second post."
+description = "Description of the second post."
 
 [taxonomies]
 tags = ["rust", "art"]
 +++
 
-This is the summary of the second post!
-
-<!-- more -->
-
-This is the rest of the post.
+This is the entire second post, there is no summary!

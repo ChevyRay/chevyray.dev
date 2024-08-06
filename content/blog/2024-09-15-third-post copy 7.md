@@ -1,7 +1,6 @@
 +++
 title = "Third Post 7"
 slug = "third-post7"
-summary = "Summary of the third post."
 
 [taxonomies]
 tags = ["game-dev", "art"]

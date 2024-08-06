@@ -67,7 +67,7 @@ hr {
 }
 
 .header {
-    background-color: $pink;
+    background-color: #ea76cb;
     padding-top: 20px;
     padding-bottom: 40px;
     --a: 90deg; // the angle of the spikes
@@ -385,20 +385,12 @@ blockquote {
     }
 }
 
-.posts {
-    
-}
-
 .post {
     margin-block-start: 1rem;
     margin-block-end: 2rem;
 
     h1 {
         font-size: 1.5rem;
-    }
-
-    a {
-        text-decoration: none;
     }
 }
 
@@ -423,6 +415,9 @@ blockquote {
         a {
             text-decoration: none;
         }
+    }
+    a {
+        text-decoration: none;
     }
 }
 

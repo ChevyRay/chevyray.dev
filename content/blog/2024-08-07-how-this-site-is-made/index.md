@@ -143,7 +143,7 @@ set of fonts, which are very similar but have a few more style and letter shape 
 
 The most boring choice of the three is my tried-and-true coding font of choice,
 [Fira Code](https://github.com/tonsky/FiraCode). I've been using this font as my main programming
-font for almost 10 years now, and every time I try to switch I find myself coming back to it.
+font for many years now, and every time I try to switch I find myself coming back to it.
 
 Last year I did a blind run of [codingfont.com](https://www.codingfont.com/) to see if maybe there
 was some other font out there that was more suited to me.

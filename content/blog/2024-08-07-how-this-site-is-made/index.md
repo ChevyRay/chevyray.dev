@@ -152,6 +152,7 @@ was some other font out there that was more suited to me.
 of *those* people who really like displaying my code with ligatures, and having support for that is
 always a bonus.
 
+> Rust code
 ```rust
 fn main() -> usize {
     // Iterate over all integers from 4 to 10
@@ -257,6 +258,31 @@ even just edit it directly using GitHub's online text editor and submit the fix 
 No tweeting me, no emails, nothing. Just a couple clicks and a fix is on the way. This might not
 actually get used, but I think the idea is great and is a feature I would love to see more
 educational sites and programming blogs support.
+
+### Hashing Query Strings
+
+One other small but useful thing I did was make it so that if the linked CSS or JS files change,
+they trigger cache reloads on browsers that have visited the website before.
+
+This was essential when building the site because when I would go to test it on my phone, the
+browser would cache the stylesheets to save bandwidth and I wouldn't see my latest changes
+reflected.
+
+Luckily, Zola provides a handy `get_hash()` function that worked perfectly here. Basically,
+every time the base template gets generated, it looks at the CSS file it is embedding and
+generates a hash string out of it. I then append this as a
+[query string](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams) onto the
+CSS url.
+
+> base.html
+```html
+{% set hash = get_hash(path="public/latte.css", sha_type=256, base64=true) %}
+<link rel="stylesheet" href="/latte.css?{{ hash }}" id="sheet-link">
+```
+
+This way, whenever the CSS file changes, the URL will also change (even though the filename
+itself has not), and anything that cached the CSS associated with the old URL will
+discover a new one in its place when the page loads, triggering a stylesheet refresh.
 
 ## Conclusion
 

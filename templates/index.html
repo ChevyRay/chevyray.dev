@@ -37,11 +37,11 @@
 <h1 class="latest">Latest Posts</h1>
 
 {%- set section = get_section(path="blog/_index.md") -%}
-{%- for page in range(start=0,end=5) -%}
-    {%- if not section.pages[page] -%}
+{%- for page in section.pages -%}
+    {%- if loop.index > 5 -%}
         {%- break -%}
     {%- endif -%}
-    {{ macros::post_preview(page = section.pages[page]) }}
+    {{ macros::post_preview(page = page) }}
 {%- endfor -%}
 
 <div class="more-posts">

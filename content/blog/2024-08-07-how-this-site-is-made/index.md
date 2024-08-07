@@ -251,6 +251,15 @@ it directly to the source code for that post in the git repo! Because Zola provi
 permalink for each post in the template, and the folder structure for posts matches the outputted
 URL paths, I can just append it to a link to the respective directory in the repository itself!
 
+> templates/feedback.html
+```html
+<p class="feedback">
+    If you find errors or have suggestions, you can visit the
+    <a href="https://github.com/ChevyRay/chevyray.dev/tree/main/content/{{ page.relative_path }}" target="_blank">
+    source code for this post</a> directly to file an issue or submit a pull request.
+</p>
+```
+
 This means that if someone finds an error in a post (such as incorrect code, misleading information,
 broken links, or typos), they can just click the link and report the error directly. They could
 even just edit it directly using GitHub's online text editor and submit the fix immediately.

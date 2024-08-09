@@ -5,7 +5,7 @@ description = "How I used my own Rust tool to ship 175 quality pixel fonts."
 draft = false
 
 [taxonomies]
-tags = ["rust", "fonts"]
+tags = ["rust"]
 
 [extra]
 has_toc = true

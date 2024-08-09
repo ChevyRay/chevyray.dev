@@ -686,3 +686,37 @@ iframe:not(+p) {
 .red { color: $red; }
 
 .blue { color: $blue; }
+
+table {
+    border-collapse: collapse;
+    -webkit-border-spacing: 0;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-block: 1rem 1rem;
+
+    code {
+        font-size: 0.9rem;
+        padding-left: 5px;
+        padding-right: 5px;
+        border-radius: 4px;
+        border: 1px dotted $text;
+    }
+
+    td, th {
+        padding: 5px 20px 5px 20px;
+        text-align: left;
+    }
+
+    thead {
+        background-color: $surface0;
+    }
+    tbody {
+        tr:nth-child(odd) {
+            background-color: $mantle;
+        }
+        tr:nth-child(even) {
+            background-color: $crust;
+        }
+    }
+}

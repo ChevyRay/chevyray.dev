@@ -14,6 +14,9 @@ compile_sass = true
 # Whether to minify the outputted HTML
 minify_html = true
 
+# Don't process assets of this type
+ignored_content = ["*.{ase,psd,afdesign}"]
+
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
 

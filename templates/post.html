@@ -36,8 +36,8 @@
 {{ page.content | safe }}
 
 <div class="prev-next">
-    {% if page.lower %}
-        <a class="prev" href="{{ page.lower.permalink }}">
+    {% if page.higher %}
+        <a class="prev" href="{{ page.higher.permalink }}">
             <div>
                 <i class="ri-arrow-left-line"></i>
             </div>
@@ -46,7 +46,7 @@
                     Prev Post
                 </div>
                 <div class="lower">
-                    {{ page.lower.title }}
+                    {{ page.higher.title }}
                 </div>
             </div>
         </a>
@@ -54,14 +54,14 @@
 
     <div class="mid"></div>
 
-    {% if page.higher %}
-        <a class="next" href="{{ page.higher.permalink }}">
+    {% if page.lower %}
+        <a class="next" href="{{ page.lower.permalink }}">
             <div>
                 <div class="upper">
                     Next Post
                 </div>
                 <div class="lower">
-                    {{ page.higher.title }}
+                    {{ page.lower.title }}
                 </div>
             </div>
             <div>

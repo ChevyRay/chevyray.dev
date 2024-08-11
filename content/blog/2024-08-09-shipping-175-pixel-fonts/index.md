@@ -147,7 +147,7 @@ support.
 My new fonts were going to support 176 characters, meaning I might have to enter as many as
 `176² = 37,976` kerning pairs... yeah not going to happen. So this time, since I was (spoiler alert)
 writing my own tool to generate the fonts, I decided to semi-automate this process to take care of
-a huge majority of the kerning, and do manual entry when algorithm didn't suffice.
+a huge majority of the kerning, and do manual entry when the algorithm didn't suffice.
 
 ### Better Quality Control
 

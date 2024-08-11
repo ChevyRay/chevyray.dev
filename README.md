@@ -29,7 +29,7 @@ Checking all internal links with anchors.
 -> Creating 5 pages (0 orphan) and 1 sections
 Done in 277ms.
 
-Listening for changes in /Users/chevyjohnston/JS/chevyray.dev/{config.toml,content,sass,static,templates}
+Listening for changes in /websites/chevyray.dev/{config.toml,content,sass,static,templates}
 Press Ctrl+C to stop
 
 Web server is available at http://127.0.0.1:1111 (bound to 127.0.0.1:1111)

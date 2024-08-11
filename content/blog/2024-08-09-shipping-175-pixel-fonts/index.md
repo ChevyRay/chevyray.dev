@@ -297,7 +297,7 @@ collections of `Point` structs which look like this:
 > Rust code
 ```rust
 // these have a bunch of derives, methods, and
-// contructors, but I won't list them all here
+// constructors, but I won't list them all here
 #[derive]
 pub struct Point {
     pub x: i16,
@@ -974,7 +974,7 @@ let PackedItems { w, h, mut items } = {
 };
 ```
 
-Because positioning info is lossed in a tighly packed atlas, the data files for
+Because positioning info is lost in a tightly packed atlas, the data files for
 these have a bit more information to help you render text correctly:
 
 > JSON

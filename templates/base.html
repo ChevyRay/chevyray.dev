@@ -49,6 +49,9 @@
     <meta name="msapplication-TileColor" content="#000000">
     <meta name="theme-color" content="#ffffff"> 
 
+    <!-- RSS feed -->
+    <link rel="alternate" type="application/rss+xml" href="/rss.xml" title="Chevy Ray" />
+
     <!-- stylesheets -->
     {% set hash = get_hash(path="public/latte.css", sha_type=256, base64=true) %}
     <link rel="stylesheet" href="/latte.css?{{ hash }}" id="sheet-link">

@@ -218,11 +218,6 @@ files into `pifo`:
 pifo --all --output "Faraway" --input "Faraway*"
 ```
 
-It then will chop the tilesheeet into individual glyphs, process and contour them in parallel, gather
-them into a TTF file and export it (along with several other engine-ready formats).
-
-In this section I will go over each of these steps.
-
 It then takes the image, chops it up into individual glyph tiles, generates contours for
 them, automatically calculates kerning pairs between them, and then gathers them all
 into a font and exports as a TTF file. It also exports the font in several other

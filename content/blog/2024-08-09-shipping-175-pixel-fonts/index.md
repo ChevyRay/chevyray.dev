@@ -453,8 +453,8 @@ let mut edges: Vec<(Point, Point)> = cluster
 ### Chaining Edges
 
 The next part is tricky. We need to take that list of edges and build a *path* out
-of them by attaching them together. If we imagine each point as a `(tail, head)`
-tuple representing an edge, then we can write an algorithm that attaches all the
+of them by attaching them together. If we imagine each edge as a `(tail, head)`
+tuple of points, then we can write an algorithm that attaches all the
 overlapping heads to all the overlapping tails to create a contiguous path.
 
 > Rust code

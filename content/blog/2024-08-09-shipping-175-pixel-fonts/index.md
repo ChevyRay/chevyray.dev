@@ -179,7 +179,7 @@ I've been a pixel artist since I was a wee child, and made a lot of pixel fonts,
 and the nature of traditional typeface design. So while I was working on these fonts, I spent a lot of
 time studying and learning as much as I could about the craft.
 
-A book that helped me a lot, and I think is great for beginners, is the book
+A book that helped me a lot was
 [Design School: Type](https://www.richardpoulin.net/books/design-school-type) by Richard Poulin.
 
 ![Cover and preview pages of "Design School: Type" by Richard Poulin](type_book.webp)

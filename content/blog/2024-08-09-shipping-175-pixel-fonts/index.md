@@ -85,7 +85,7 @@ After Ikenfell released, I was in pretty bad burnout for a long time and did not
 work on another game. During that time, I continued to learn and improve my Rust programming skills. I
 also kept dabbling in pixel fonts, with the intent of eventually putting together another pack.
 
-But I knew I'd have to outdo the previous back, and I planned to do so definitively.
+But I knew I'd have to outdo the previous pack, and I planned to do so definitively.
 
 ### Bigger and Better
 

@@ -364,7 +364,7 @@ blockquote:not(:has(+pre)) {
     margin-block: 1rem 1rem;
     font-style: italic;
 
-    code {
+    :not(pre) code {
         //background-color: $surface0 !important;
         background-color: transparent !important;
         border: 1px dotted $text;

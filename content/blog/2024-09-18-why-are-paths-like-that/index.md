@@ -2,6 +2,7 @@
 title = "Why Are Paths Like That"
 slug = "why-are-paths-like-that"
 description = "Why are Rust paths so weird, and can we make them easier?"
+draft = true
 
 [taxonomies]
 tags = ["rust"]

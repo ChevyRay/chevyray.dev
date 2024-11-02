@@ -2,7 +2,7 @@
 title = "Jellyfish: A Scripting Language Concept"
 slug = "jellyfish"
 description = "Imaginging my ideal embeddable scripting language for games."
-draft = false
+draft = true
 
 [taxonomies]
 tags = ["game-dev"]

@@ -41,19 +41,11 @@ all the information needed to embed and use the language, with no arcane knowled
 This is a big one. It must have a static type system, meaning not dynamically typed. It should be a compile
 error to assign a string and an integer to the same variable, or pass the wrong type into a function. I should
 not be able to compile code that tries to call functions that don't exist, or reference types that have not
-been declared. And I want a fairly strict type system. Some scripting languages have gradual typing, which
-would not pass this requirement.
+been declared.
 
-Like, for example:
-
-```lua
-local a = 123
-local b = "dog"
-local c = a * b
-```
-
-Why does this compile? This should not compile. In no world do I want this to ever happen. Unacceptable. Get
-it out of here.
+And I want a fairly strict type system. Some scripting languages have gradual typing, which would not pass
+this requirement. If I try to write code that adds a number and a dog together? No, that should not compile.
+Does the language allow that to compile and break at runtime? Good lord why? We could easily have known!
 
 #### <i class="ri-checkbox-line"></i> Expression Oriented
 
@@ -69,9 +61,22 @@ such a great coding mechanism, a tool I find myself incorporating so often in co
 support it. Taking it away from me is like taking away `if` statements or `+ - *` operators... like I am
 perfectly capable of coding without them, but my code is just worse and I am much less happy writing it.
 
+They can be used badly, but no more than nesting or functions or loops, other things we accept as essential
+mechanisms for writing software that Does Stuff We Want. Pattern matching has found a home among them.
+
 #### <i class="ri-checkbox-line"></i> No Garbage Collector
 
- 
+Sometimes I do not understand the existence of garbage collectors. Why, instead of having memory freed when I
+expect it will, freed at times I basically cannot expect. I am writing games, things that are supposed to be
+very smooth and responsive, so why am I using a language that basically randomly decides to freeze up at times
+that cannot be predicted?
+
+By "no garbage collector", *that* is the kind of garbage collector I mean. I realized that pretty much the
+reason we need generational garbage collectors is to support the existence of cyclic references...
+
+So that means if we just... write code that doesn't have cyclic references, we don't need a huge GC smogging
+up the running code? That's all we have to lose? Let's lose it then. So when you get a language that
+*enforces* that no cyclic references exist, imagine that! We'll call it... *Shmust*... or maybe *Shmellyfish*.
 
 #### <i class="ri-checkbox-line"></i> Interpreted Bytecode
 

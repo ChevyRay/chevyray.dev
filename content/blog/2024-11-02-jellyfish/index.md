@@ -36,7 +36,7 @@ The language must be simple to embed. I should not have to download 80 million l
 project as calling `cargo add XXXXX` is to add a dependency to a crate. The documentation alone should have
 all the information needed to embed and use the language, with no arcane knowledge required.
 
-#### Statically Typed
+#### <i class="ri-checkbox-line"></i> Statically Typed
 
 This is a big one. It must have a static type system, meaning not dynamically typed. It should be a compile
 error to assign a string and an integer to the same variable, or pass the wrong type into a function. I should
@@ -44,72 +44,38 @@ not be able to compile code that tries to call functions that don't exist, or re
 been declared. And I want a fairly strict type system. Some scripting languages have gradual typing, which
 would not pass this requirement.
 
-#### Expression Oriented
+Like, for example:
+
+```lua
+local a = 123
+local b = "dog"
+local c = a * b
+```
+
+Why does this compile? This should not compile. In no world do I want this to ever happen. Unacceptable. Get
+it out of here.
+
+#### <i class="ri-checkbox-line"></i> Expression Oriented
 
 Switching to expression oriented languages was a game changer for me, and is a requirement that I suspect would
 not be on other game developers' radar. Expression oriented languages that support pattern matching also unlock
-all kinds of opportunities for what I think is very elegant, easy to reason about code.
+all kinds of opportunities for what I think is very elegant, easy to reason about code. Which leads me to my
+next one...
 
-Take this code, for example:
+#### <i class="ri-checkbox-line"></i> Pattern Matching
 
-> C Code
-```c
-int result;
-if (conditionA && conditionB)
-    result = a_and_b();
-else if (conditionA && !conditionB)
-    result = only_a();
-else if (!conditionA && conditionB)
-    result = only_b();
-else
-    result = neither();
-```
+Pattern matching is one of those things that there's life before I learned about it, and then life after. It's
+such a great coding mechanism, a tool I find myself incorporating so often in code written with languages that
+support it. Taking it away from me is like taking away `if` statements or `+ - *` operators... like I am
+perfectly capable of coding without them, but my code is just worse and I am much less happy writing it.
 
-It could also be written like this, which I like even less:
+#### <i class="ri-checkbox-line"></i> No Garbage Collector
 
-> C Code
-```c
-int result;
-if (conditionA)
-{
-    if (conditionB)
-        result = a_and_b();
-    else
-        result = only_a();
-}
-else if (conditionB)
-    result = only_b();
-else
-    result = neither();
-```
+ 
 
-Even this version, which I personally think isn't the *worse* but would probably get you into trouble
-because ternary conditionals are not univerally beloved in C-based languages:
+#### <i class="ri-checkbox-line"></i> Interpreted Bytecode
 
-> C Code
-```c
-int result = conditionA
-    ? (conditionB ? a_and_b() : only_a())
-    : (conditionB ? only_b() : neither())
-```
-
-
-
-> Rust Code
-```rust
-let result = match (condition_a, condition_b) {
-    (true, true) => a_and_b(),
-    (true, false) => only_a(),
-    (false, true) => only_b(),
-    (false, false) => neither(),
-};
-```
-
-#### No Garbage Collector
-
-#### Interpreted Bytecode
-
-#### Type Reflection
+#### <i class="ri-checkbox-line"></i> Type Reflection
 
 ## Looking at Other Languages
 

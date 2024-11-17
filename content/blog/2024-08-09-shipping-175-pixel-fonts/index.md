@@ -54,7 +54,7 @@ of fake games.
 <figure>
     <img src="old_previews.png" alt="Screenshots and mockups of various games using the pixel fonts">
     <figcaption>The amount of people who asked me where they could find some of these fake games...</figcaption>
-<figure>
+</figure>
 
 ### Legacy
 
@@ -65,7 +65,7 @@ by local developer [Brace Yourself Games](https://braceyourselfgames.com/).
 <figure>
     <img src="cadence.webp" alt="Screenshot from Cadence of Hyrule">
     <figcaption>Seeing my fonts in a Zelda game, even if a spin-off, was motivating to say the least.</figcaption>
-<figure>
+</figure>
 
 Another one of my favorites was [Get in the Car, Loser](https://loveconquersallgames.itch.io/getinthecarloser),
 by [Love Conquers All Games](https://loveconquersallgam.es/), which made great use of several of the fonts.
@@ -74,7 +74,7 @@ by [Love Conquers All Games](https://loveconquersallgam.es/), which made great u
     <img src="loser1.webp" alt="Screenshot of characters talking from Get in the Car, Loser!">
     <img src="loser2.png" alt="Screenshot of a status menu from get in the Car, Loser!">
     <figcaption>The writing in this game never fails to crack me up.</figcaption>
-<figure>
+</figure>
 
 I was very happy with these results, so it was only a matter of time before I decided to revisit pixel
 fonts.
@@ -110,7 +110,7 @@ this would still improve support for unlocalized games.
 <figure>
     <img src="charset.png" alt="Image displaying all the supported characters in my pixel fonts">
     <figcaption>The final character set I settled on.</figcaption>
-<figure>
+</figure>
 
 I decided not to support any Asian or non-Latin based languages because I am not as familiar with those
 character sets and not only would I not be able to achieve the quality I wanted, but it would also make

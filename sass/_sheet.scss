@@ -313,7 +313,7 @@ hr {
 pre:has(code) {
     //background-color: $base !important;
     font-size: 0.9rem;
-    //border: 2px solid #24273a;//$surface0;
+    border: 2px solid $surface0;
     border-radius: 10px;
     padding: 10px;
     margin-block: 0 1em;
@@ -334,18 +334,15 @@ blockquote+pre {
 blockquote:has(+pre) {
     display: inline-block;
 
-    color: #24273a; //$overlay1;
-
     font-family: 'code' !important;
     font-size: 0.8rem;
-    font-weight: 600;//600;
+    font-weight: 600;
     margin: 0;
     margin-block: 0 0;
 
-    //background-color: #24273a;//$crust;
+    background-color: $surface0;
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
-    border: 3px solid #24273a;
     padding-left: 0.75rem;
     padding-right: 0.75rem;
 

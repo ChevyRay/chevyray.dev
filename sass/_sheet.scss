@@ -334,17 +334,18 @@ blockquote+pre {
 blockquote:has(+pre) {
     display: inline-block;
 
-    color: $surface1;
+    color: #24273a; //$overlay1;
 
     font-family: 'code' !important;
     font-size: 0.8rem;
-    font-weight: 600;
+    font-weight: 600;//600;
     margin: 0;
     margin-block: 0 0;
 
-    background-color: #24273a;//$crust;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    //background-color: #24273a;//$crust;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border: 3px solid #24273a;
     padding-left: 0.75rem;
     padding-right: 0.75rem;
 

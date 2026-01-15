@@ -250,15 +250,15 @@ hr {
 
     p {
         margin-block: 1rem 1rem;
+    }
 
-        code {
-            background-color: $crust;
+    p code, li code {
+        background-color: $crust;
             font-style: normal;
             font-size: 0.9rem;
             padding-left: 5px;
             padding-right: 5px;
             border-radius: 4px;
-        }
     }
 
     img {

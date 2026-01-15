@@ -149,18 +149,18 @@ impl Game for MyGame {
 Kero sets you up with a single window, rendering context, and a game loop to do your business in.
 Your game has three callbacks:
 
-- **`new()`** for initialization
-- **`update()`** for game logic
-- **`render()`** for drawing
+- `new()` for initialization
+- `update()` for game logic
+- `render()` for drawing
 
 These callbacks are passed a `Context` that gives you access to six core systems:
 
-- **`Window`** for window and monitor access
-- **`Time`** for the game timer, FPS, and delta time
-- **`Mouse`** for mouse position, scrolling, and button handling
-- **`Keyboard`** for keyboard and text input handling
-- **`Gamepads`** for controller detection and input handling
-- **`Graphics`** for creating textures, surfaces, shaders, and more
+- `Window` for window and monitor access
+- `Time` for the game timer, FPS, and delta time
+- `Mouse` for mouse position, scrolling, and button handling
+- `Keyboard` for keyboard and text input handling
+- `Gamepads` for controller detection and input handling
+- `Graphics` for creating textures, surfaces, shaders, and more
 
 ### Input Handling
 
@@ -307,14 +307,14 @@ Shader parameters are set via the [drawing API](#drawing-api).
 Games obviously involve a lot of math and linear algebra, and so Kero ships with a bunch of code
 for doing all that good stuff. We have each of the numeric types:
 
-- **`Vec2<T>`** for 2D vectors
-- **`Vec3<T>`** for 3D vectors
-- **`Vec4<T>`** for 4D vectors
-- **`Mat2<T>`** for 2x2 (rotation) matrices
-- **`Mat3<T>`** for 3x3 (rotation/translation/scale) matrices
-- **`Mat4<T>`** for 4x4 (perspective/ortho/rotation/translation/scale) matrices
-- **`Affine2<T>`** for 2D transformations
-- **`Affine3<T>`** for 3D transformations
+- `Vec2<T>` for 2D vectors
+- `Vec3<T>` for 3D vectors
+- `Vec4<T>` for 4D vectors
+- `Mat2<T>` for 2x2 (rotation) matrices
+- `Mat3<T>` for 3x3 (rotation/translation/scale) matrices
+- `Mat4<T>` for 4x4 (perspective/ortho/rotation/translation/scale) matrices
+- `Affine2<T>` for 2D transformations
+- `Affine3<T>` for 3D transformations
 
 The `T` in each of these can be any of the primitive number types such as `f32`, `i32`, `u32` and
 so on. Because those three are the most common, they have type aliases. So `Vec2F`, `Vec2I`, and
@@ -350,9 +350,9 @@ let result = start.lerp(end, 0.5); // (15, 15)
 
 There are three main types for specifying angles/rotations:
 
-- **`Radians<T>`** for angles in radians
-- **`Degrees<T>`** for angles in degrees
-- **`Rotations<T>`** for angles in whole rotations
+- `Radians<T>` for angles in radians
+- `Degrees<T>` for angles in degrees
+- `Rotations<T>` for angles in whole rotations
 
 This allows you to specify angles in whatever format the situation desires. If af unction takes an
 angle argument, you could pass in `rads(f32::TAU * 2.0)`, `degs(720.0)`, or `rots(2.0)` all with
@@ -360,8 +360,8 @@ the same result. Sometimes you want to just say "hey spin 2 times" and not have 
 
 In addition to these, there are two other enum types provided for directions:
 
-- **`Cardinal`** for 4-way directions (North, East, South, and West)
-- **`Octal`** for 8-way directions (North, North East, East, South East...)
+- `Cardinal` for 4-way directions (North, East, South, and West)
+- `Octal` for 8-way directions (North, North East, East, South East...)
 
 These can be useful for storing object directions and so forth, roguelike and tile-based games, and
 also useful for all kinds of grid algorithms and cellular automata.
@@ -373,11 +373,11 @@ useful functionality for game development.
 
 It has basic geometric shapes:
 
-- **`Rect<T>`** for axis-aligned rectangles
-- **`Circle<T>`** for circles
-- **`Triangle<T>`** for triangles
-- **`Quad<T>`** for quadrilaterals
-- **`Polygon<T>`** for convex polygons
+- `Rect<T>` for axis-aligned rectangles
+- `Circle<T>` for circles
+- `Triangle<T>` for triangles
+- `Quad<T>` for quadrilaterals
+- `Polygon<T>` for convex polygons
 
 These all have methods for overlap testing with all other shapes as well as extraction vectors
 using the [separating-axis-theorem](https://en.wikipedia.org/wiki/Hyperplane_separation_theorem),
@@ -461,3 +461,25 @@ You're provided with a view matrix for camera transformations, as well as a glob
 which allows you to batch render with a transform. You can switch shaders, change the rendering
 surface, and modify shader parameters all with inline code and everything will happen in the order
 you specify as if it were immediate.
+
+## 
+
+## What Needs to be Done?
+
+Despite being fairly full-featured and usable already, there's still a lot of work that needs to be
+done to get Kero into a version 1.0 and stable release flow.
+
+- More comprehensive documentation, doc examples, doc tests, and module-level explainers (for
+  example, I like the way that the Rust docs for
+  [collections](https://doc.rust-lang.org/std/collections/index.html) has an overview of all the
+  types and when to choose them)
+- Unit tests (so many) need to be written, several bugs will likely be found while doing this
+- More bug testing overall, especially when being used to create actual little game projects
+- More examples, not just to show off features but also small full game examples that can be used
+  to show the framework doing what it is good at, and also give newcomers a starting point
+- All of the different system APIs and math/etc. types need to be debated and bike shedded, if we
+  are going to lock into naming and style conventions I'd like to start from a strong place
+- Github CI needs to be set up, a release schedule chosen, and a well-documented release process
+- A website, getting started tutorials, and maybe a Rust-style book need to be designed and written
+- If Kero is going to ship with an audio API, we need to decide what that is going to look like and
+  how much we want to lock users into a particular library, etc.

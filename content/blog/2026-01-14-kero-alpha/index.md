@@ -1,7 +1,7 @@
 +++
-title = "Polywog: Seeking Alpha Testers for a 2D Rust Game Framework"
-slug = "polywog-alpha"
-description = "Polywog is a 2D game framework that aims to be a MonoGame/Love2D/Raylib equivalent for Rust."
+title = "KERO: Seeking Testers for 2D Rust Game Framework"
+slug = "kero-alpha"
+description = "Kero is a 2D game framework that aims to be a MonoGame/Love2D/Raylib equivalent for Rust."
 draft = true
 
 [taxonomies]
@@ -15,13 +15,13 @@ has_toc = true
 > This library is currently in an **UNSTABLE ALPHA STATE** and should not be used for real
 > projects at this time! 
 
-![The polywog mascot](banner.png)
+![The kero mascot](header.png)
 
 ## Introduction
 
 ### A 2D Rust Game Framework
 
-Polywog is an approachable, cross-platform pure code framework for creating 2D games in Rust. It's
+Kero is an approachable, cross-platform pure code framework for creating 2D games in Rust. It's
 basically a Rust-powered equivalent to [MonoGame](https://monogame.net/),
 [LÖVE](https://www.love2d.org/), and [raylib](https://www.raylib.com/).
 
@@ -29,7 +29,7 @@ Today I have open sourced the project with the intent of finding **alpha testers
 **more contributors** and the ultimate goal of polishing, stabilizing, and eventually releasing the
 project as a serious and reliable game development tool in the Rust ecosystem.
 
-- [<i class="ri-github-fill"></i> **SOURCE CODE**](https://github.com/feyworks/polywog)</span>
+- [<i class="ri-github-fill"></i> **SOURCE CODE**](https://github.com/feyworks/kero)</span>
 - [<i class="ri-discord-fill"></i> **DISCORD SERVER**](https://discord.gg/AYjNw9WHJa)
 
 If you're interested in contacting me directly about the project, my contact information is at the
@@ -37,7 +37,7 @@ bottom of the page.
 
 ## Features
 
-Polywog provides:
+Kero provides:
 
 - 🌍 cross platform support for Windows (DX12), Linux (Vulkan) and macOS (Metal)
 - 🖥️ a window, game loop, and rendering context out of the box and ready to go
@@ -52,7 +52,7 @@ Polywog provides:
 - 🦀 full access to Rust's speed, power, ecosystem, and pleasure of use
 - 🌙 full Lua bindings if desired, with LuaLS type annotations
 
-Polywog is a pure-code framework that programmers can use to code their games or even to build their
+Kero is a pure-code framework that programmers can use to code their games or even to build their
 own game engines. It is not a *game engine* itself, like [Godot](https://godotengine.org/) or
 [Unity](https://unity.com/), so it has no editor nor concept of worlds and game objects.
 
@@ -65,13 +65,13 @@ text. All very common things you'd expect a game to be able to do.
 
 > Rust Code
 ```rust
-use polywog::prelude::*;
+use kero::prelude::*;
 
 fn main() -> Result<(), GameError> {
     env_logger::init();
 
     // create a game, set some options, and then run it
-    polywog::new_game()
+    kero::new_game()
         .with_title("My Game")
         .with_size(1280, 720)
         .run::<MyGame>(())
@@ -146,7 +146,7 @@ impl Game for MyGame {
 
 ### Window & Game Loop
 
-Polywog sets you up with a single window, rendering context, and a game loop to do your business in.
+Kero sets you up with a single window, rendering context, and a game loop to do your business in.
 Your game has three callbacks:
 
 - **`new()`** for initialization
@@ -214,7 +214,7 @@ input simultaneously, handle control mapping, and eventually even enable remote 
 
 ### Graphics Resources
 
-Polywog allows you to load drawable textures (images) in many ways: manually, from embedded image
+Kero allows you to load drawable textures (images) in many ways: manually, from embedded image
 files, from memory streams, or most commonly from files on disk.
 
 Here, we create a `Texture` directly from a PNG image file.
@@ -304,7 +304,7 @@ Shader parameters are set via the [drawing API](#drawing-api).
 
 ### Vectors & Matrices
 
-Games obviously involve a lot of math and linear algebra, and so Polywog ships with a bunch of code
+Games obviously involve a lot of math and linear algebra, and so Kero ships with a bunch of code
 for doing all that good stuff. We have each of the numeric types:
 
 - **`Vec2<T>`** for 2D vectors
@@ -333,7 +333,7 @@ let matrix = Mat2F::rotation(degs(90.0));
 let result = matrix.transform_vec2(vec2(10.0, 0.0));
 ```
 
-All numeric types in Polywog also implement the `Numeric` trait, which provides a bunch of
+All numeric types in Kero also implement the `Numeric` trait, which provides a bunch of
 convenience methods for casting between them. For example, we could cast a `Vec2<i32>` into a
 `Vec2<f32>` by calling `to_f32()` on it.
 
@@ -368,7 +368,7 @@ also useful for all kinds of grid algorithms and cellular automata.
 
 ### Geometry & Collision
 
-In addition to the vector types, Polywog comes with a full-featured 2D geometry library loaded with
+In addition to the vector types, Kero comes with a full-featured 2D geometry library loaded with
 useful functionality for game development.
 
 It has basic geometric shapes:
@@ -385,7 +385,7 @@ methods to iterate over their points and edges, and raycasting.
 
 ### RNGs & GUIDs
 
-Random number generation and unique ID generation is so common that Polywog just makes it available
+Random number generation and unique ID generation is so common that Kero just makes it available
 to you right out of the box.
 
 You can create an RNG and request values from it in various ways:
@@ -438,11 +438,11 @@ interpolate between them, and so on.
 ### Texture Packing
 
 Any game that wants to do a substantial amount of rendering will benefit from the ability to pack
-multiple images into atlases and render them all together in batched draw calls. Polywog comes with
+multiple images into atlases and render them all together in batched draw calls. Kero comes with
 a `TexturePacker` for this purpose, which produces `SubTextures` that can be drawn as if they were
 whole images.
 
-You can instruct Polywog to pack images for you or load pre-baked files, whichever your asset
+You can instruct Kero to pack images for you or load pre-baked files, whichever your asset
 pipeline requires. It's even trivial to do things like write build scripts to pre-bake atlases for
 you automatically.
 
